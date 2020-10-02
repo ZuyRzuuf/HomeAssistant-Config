@@ -1,0 +1,75 @@
+title: Otoczenie
+path: outdoor
+icon: "mdi:island"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            name: ciśnienie
+            entity: sensor.0x00158d0004aaded3_pressure
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            name: temperatura zachód
+            entity: sensor.0x000d6ffffe6ece5b_temperature
+          - type: sensor
+            name: wilgotność zachód
+            entity: sensor.0x000d6ffffe6ece5b_humidity
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            name: temperatura północ
+            entity: sensor.0x00158d0004aaded3_temperature
+          - type: sensor
+            name: wilgotność północ
+            entity: sensor.0x00158d0004aaded3_humidity
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: przód
+            entity: switch.0x680ae2fffe096ec9_switch_l1
+            icon: "mdi:string-lights"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card:
+                !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            name: bok
+            entity: switch.0x680ae2fffe096ec9_switch_l2
+            icon: "mdi:string-lights"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card:
+                !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            name: tył
+            entity: switch.0x842e14fffedfbfb3_switch_left
+            icon: "mdi:string-lights"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card:
+                !include ../common_ui_elements/tile_style.yaml

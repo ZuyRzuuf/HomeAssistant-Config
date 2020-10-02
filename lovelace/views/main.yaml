@@ -1,0 +1,49 @@
+panel: false
+title: Główna
+path: main
+icon: "mdi:home"
+badges:
+  - entity: sensor.solaredge_energy_today
+  - entity: person.krzysiek
+  - entity: sun.sun
+  - entity: binary_sensor.updater
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: weather-forecast
+            entity: weather.tuwima
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.solaredge_current_power
+            name: Produkcja prądu
+            graph: line
+            detail: 2
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: script.dry_towel_in_upper_bathroom
+            name: "dry towel"
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card:
+                !include ../common_ui_elements/tile_style.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: script.dry_upper_bathroom_after_bath
+            name: "dry bathroom"
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card:
+                !include ../common_ui_elements/tile_style.yaml

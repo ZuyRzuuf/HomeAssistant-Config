@@ -1,0 +1,24 @@
+title: Gabinet
+path: office
+icon: "mdi:desk"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.0x588e81fffe4d34ed_light
+            name: biurko
+            icon: "mdi:desk-lamp"
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.gabinet
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: climate.gabinet
+            hours_to_show: 24
+            refresh_interval: 0

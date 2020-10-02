@@ -1,0 +1,14 @@
+title: Drzwi i okna
+path: doors-and-windows
+icon: "mdi:door"
+badges: []
+cards:
+  - type: entities
+    state_color: true
+    entities:
+      - type: section
+        label: kotłownia
+      - entity: binary_sensor.0xec1bbdfffe399fbd_contact
+      - type: section
+        label: strych
+      - entity: binary_sensor.0x14b457fffe157ca1_contact

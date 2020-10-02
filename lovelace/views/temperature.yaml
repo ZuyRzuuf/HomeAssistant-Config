@@ -1,0 +1,15 @@
+title: Temperatura
+path: temperature
+icon: "mdi:thermometer"
+badges: []
+cards:
+  - type: entities
+    entities:
+      - entity: climate.gabinet
+        name: Gabinet
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: climate.salon_wykusz_prawy
+        name: Salon
+        icon: "mdi:thermometer"
+        state_color: true

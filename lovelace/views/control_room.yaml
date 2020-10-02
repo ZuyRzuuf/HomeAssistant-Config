@@ -1,0 +1,10 @@
+title: Sterownia
+path: control-room
+icon: "mdi:cog-outline"
+badges: []
+cards:
+  - type: entities
+    # label: stan urządzeń
+    entities:
+      - entity: input_boolean.is_waterpump_enabled
+        name: pompa cyrkulacji

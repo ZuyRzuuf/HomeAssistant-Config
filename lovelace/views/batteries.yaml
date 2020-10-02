@@ -1,0 +1,9 @@
+title: Baterie
+path: batteries
+icon: "mdi:battery"
+badges: []
+cards:
+  - type: custom:battery-state-card
+    sort_by_level: asc
+    entities:
+      - entity: sensor.0xec1bbdfffee23cb0_battery
