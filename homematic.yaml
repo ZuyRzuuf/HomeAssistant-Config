@@ -1,0 +1,25 @@
+interfaces:
+  rf:
+    host: !secret homematic_ccu_host
+    resolvenames: json
+    username: !secret homematic_ccu_user
+    password: !secret homematic_ccu_pass
+  ip:
+    host: !secret homematic_ccu_host
+    port: 2010
+    resolvenames: json
+    username: !secret homematic_ccu_user
+    password: !secret homematic_ccu_pass
+  groups:
+    host: !secret homematic_ccu_host
+    port: 9292
+    resolvenames: json
+    username: !secret homematic_ccu_user
+    password: !secret homematic_ccu_pass
+    path: /groups
+hosts:
+  ccu3:
+    host: !secret homematic_ccu_host
+    port: 2001
+    username: !secret homematic_ccu_user
+    password: !secret homematic_ccu_pass

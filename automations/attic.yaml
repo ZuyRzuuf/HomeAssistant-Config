@@ -1,0 +1,32 @@
+- id: '1601636262174'
+  alias: Turn On Attic Lights when Hatch is Open
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b104218f049d11eb80087da8b8dc7dac
+    entity_id: binary_sensor.0x14b457fffe157ca1_contact
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: fb3cfb0d048f11eb9dcd293eca6d93ce
+    entity_id: switch.attic_light_switch
+    domain: switch
+  mode: single
+- id: '1601636310321'
+  alias: Turn Off Attic Lights when Hatch is Closed
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: b104218f049d11eb80087da8b8dc7dac
+    entity_id: binary_sensor.0x14b457fffe157ca1_contact
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: fb3cfb0d048f11eb9dcd293eca6d93ce
+    entity_id: switch.attic_light_switch
+    domain: switch
+  mode: single

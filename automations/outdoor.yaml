@@ -1,0 +1,51 @@
+- id: '1601638337922'
+  alias: Toggle Outdoor Side Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: middle_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_middle_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 03929acf049811eb8c834fd774ea18cc
+    entity_id: switch.0x680ae2fffe096ec9_switch_l1
+    domain: switch
+  mode: single
+- id: '1601638970773'
+  alias: Toggle Outdoor Back Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: right_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_right_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 333b5870049a11eb926bc3634a291950
+    entity_id: switch.0x842e14fffedfbfb3_switch_left
+    domain: switch
+  mode: single
+- id: '1601639207668'
+  alias: Toggle Outdoor Front Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: left_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_left_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 03929acf049811eb8c834fd774ea18cc
+    entity_id: switch.0x680ae2fffe096ec9_switch_l2
+    domain: switch
+  mode: single

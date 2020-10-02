@@ -1,0 +1,26 @@
+- id: "1601646532061"
+  alias: Turn On Back Corridor Light when Someone In
+  description: ""
+  trigger:
+    - type: motion
+      platform: device
+      device_id: 0f5fbe4604aa11eb88fb33327735e82b
+      entity_id: binary_sensor.0x00158d0005317a91_occupancy
+      domain: binary_sensor
+    - type: motion
+      platform: device
+      device_id: 5bd0557604a911eb8619afa07127780e
+      entity_id: binary_sensor.0xec1bbdfffee23cb0_occupancy
+      domain: binary_sensor
+  condition: []
+  action:
+    - type: turn_on
+      device_id: 9b30703504ab11eb88cb917b08b09f19
+      entity_id: switch.0xbc33acfffe4c4d6b_switch
+      domain: switch
+    - delay: 00:02:00
+    - type: turn_off
+      device_id: 9b30703504ab11eb88cb917b08b09f19
+      entity_id: switch.0xbc33acfffe4c4d6b_switch
+      domain: switch
+  mode: restart
