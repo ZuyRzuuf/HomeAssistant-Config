@@ -1,0 +1,17 @@
+# all files outside whitelist will be ignored
+*
+
+# whitelist
+!*.yaml
+!.gitignore
+!*.md
+
+# ignored folders
+.storage
+.cloud
+.google.token
+
+# blacklited YAML with secret data/credentials
+ip_bans.yaml
+known_devices.yaml
+secrets.yaml

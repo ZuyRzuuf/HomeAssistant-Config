@@ -1,0 +1,177 @@
+- id: '1601636262174'
+  alias: Turn On Attic Lights when Hatch is Open
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b104218f049d11eb80087da8b8dc7dac
+    entity_id: binary_sensor.0x14b457fffe157ca1_contact
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: fb3cfb0d048f11eb9dcd293eca6d93ce
+    entity_id: switch.attic_light_switch
+    domain: switch
+  mode: single
+- id: '1601636310321'
+  alias: Turn Off Attic Lights when Hatch is Closed
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: b104218f049d11eb80087da8b8dc7dac
+    entity_id: binary_sensor.0x14b457fffe157ca1_contact
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: fb3cfb0d048f11eb9dcd293eca6d93ce
+    entity_id: switch.attic_light_switch
+    domain: switch
+  mode: single
+- id: '1601637837634'
+  alias: Turn On Office Desk Light on 100%
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 27ed45f1049f11eb8a9077060d96d069
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0005724537 click_single
+  condition:
+  - condition: device
+    type: is_off
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+  action:
+  - type: turn_on
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1601637890897'
+  alias: Turn Off Office Desk Light
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 27ed45f1049f11eb8a9077060d96d069
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0005724537 click_single
+  condition:
+  - condition: device
+    type: is_on
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+  action:
+  - type: turn_off
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+  mode: single
+- id: '1601638041715'
+  alias: Turn On Office Desk Light on 50%
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 27ed45f1049f11eb8a9077060d96d069
+    type: click
+    subtype: double
+    discovery_id: 0x00158d0005724537 click_double
+  condition:
+  - condition: device
+    type: is_off
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+  action:
+  - type: turn_on
+    device_id: eb5ab563049611ebb27f7d77bdd06217
+    entity_id: light.0x588e81fffe4d34ed_light
+    domain: light
+    brightness_pct: 50
+  mode: single
+- id: '1601638337922'
+  alias: Toggle Outdoor Side Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: middle_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_middle_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 03929acf049811eb8c834fd774ea18cc
+    entity_id: switch.0x680ae2fffe096ec9_switch_l1
+    domain: switch
+  mode: single
+- id: '1601638970773'
+  alias: Toggle Outdoor Back Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: right_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_right_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 333b5870049a11eb926bc3634a291950
+    entity_id: switch.0x842e14fffedfbfb3_switch_left
+    domain: switch
+  mode: single
+- id: '1601639207668'
+  alias: Toggle Outdoor Front Lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 3aa2f901049d11ebbfe591453a7b96dd
+    type: action
+    subtype: left_single
+    discovery_id: 0xec1bbdfffe7bc4e8 action_left_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: 03929acf049811eb8c834fd774ea18cc
+    entity_id: switch.0x680ae2fffe096ec9_switch_l2
+    domain: switch
+  mode: single
+- id: '1601646532061'
+  alias: Turn On Back Corridor Light when Someone In
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 0f5fbe4604aa11eb88fb33327735e82b
+    entity_id: binary_sensor.0x00158d0005317a91_occupancy
+    domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 5bd0557604a911eb8619afa07127780e
+    entity_id: binary_sensor.0xec1bbdfffee23cb0_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 9b30703504ab11eb88cb917b08b09f19
+    entity_id: switch.0xbc33acfffe4c4d6b_switch
+    domain: switch
+  - delay: 00:20:00
+  - type: turn_off
+    device_id: 9b30703504ab11eb88cb917b08b09f19
+    entity_id: switch.0xbc33acfffe4c4d6b_switch
+    domain: switch
+  mode: restart

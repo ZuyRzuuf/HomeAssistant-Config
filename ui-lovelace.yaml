@@ -1,0 +1,622 @@
+# resources:
+#     # https://github.com/custom-cards/button-card
+#   - url: /hacsfiles/button-card/button-card.js
+#     type: module
+#     # https://github.com/maxwroc/battery-state-card
+#   - url: /hacsfiles/battery-state-card/battery-state-card.js
+#     type: module
+#     # https://github.com/kalkih/mini-graph-card
+# #  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+# #    type: module
+
+title: Tuwima
+views:
+  - panel: false
+    title: Główna
+    path: main
+    icon: "mdi:home"
+    badges:
+      - entity: sensor.solaredge_energy_today
+      - entity: person.krzysiek
+      - entity: sun.sun
+      - entity: binary_sensor.updater
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: weather-forecast
+                entity: weather.tuwima
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                entity: sensor.solaredge_current_power
+                name: Produkcja prądu
+                graph: line
+                detail: 2
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: script.dry_towel_in_upper_bathroom
+                name: "dry towel"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: script.dry_upper_bathroom_after_bath
+                name: "dry bathroom"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+
+  - title: Kuchnia
+    path: kitchen
+    icon: "mdi:chef-hat"
+    badges: []
+    cards:
+
+  - title: Salon
+    path: living-room
+    icon: "mdi:sofa"
+    badges: []
+    cards:
+    #   - type: vertical-stack
+    #     cards:
+    #       - type: horizontal-stack
+    #         cards:
+    #           - type: custom:button-card
+    #             name: lampka TV (P)
+    #             entity: switch.0x00124b001e721b08_switch
+    #             icon: 'mdi:lamp'
+    #             tap_action:
+    #               action: toggle
+    #             hold_action:
+    #               action: more-info
+    #             show_icon: true
+    #             show_name: true
+    #             show_state: false
+    #             icon_height: 64px
+    #             styles:
+    #                 card:
+    #                   - height: 120px
+    #                   - width: 120px
+    #           - type: custom:button-card
+    #             name: lampka TV (L)
+    #             entity: switch.0x00124b001e732707_switch
+    #             icon: 'mdi:lamp'
+    #             tap_action:
+    #               action: toggle
+    #             hold_action:
+    #               action: more-info
+    #             show_icon: true
+    #             show_name: true
+    #             show_state: false
+    #             icon_height: 64px
+    #             styles:
+    #                 card:
+    #                   - height: 120px
+    #                   - width: 120px
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.salon_anka
+          - type: horizontal-stack
+            cards:
+              - type: history-graph
+                entities:
+                  - entity: climate.salon_anka
+                hours_to_show: 24
+                refresh_interval: 0
+
+  - title: Gabinet
+    path: office
+    icon: "mdi:desk"
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.0x588e81fffe4d34ed_light
+                name: biurko
+                icon: "mdi:desk-lamp"
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.gabinet
+          - type: horizontal-stack
+            cards:
+              - type: history-graph
+                entities:
+                  - entity: climate.gabinet
+                hours_to_show: 24
+                refresh_interval: 0
+
+  - title: Kotłownia
+    path: boiler-house
+    icon: 'mdi:water-boiler'
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: tylne drzwi
+            entity: binary_sensor.0xec1bbdfffe399fbd_contact
+            tap_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - font-size: 0.9em
+                  - height: 110px
+                  - width: 110px
+          - type: custom:button-card
+            name: korytarz
+            entity: binary_sensor.0xec1bbdfffee23cb0_occupancy
+            tap_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - font-size: 0.9em
+                  - height: 110px
+                  - width: 110px
+          - type: custom:button-card
+            name: korytarz
+            entity: binary_sensor.0x00158d0005317a91_occupancy
+            tap_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - font-size: 0.9em
+                  - height: 110px
+                  - width: 110px
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: pompa
+            entity: switch.water_pump_switch
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - height: 110px
+                  - width: 110px
+          - type: custom:button-card
+            name: korytarz
+            entity: switch.0xbc33acfffe4c4d6b_switch
+            icon: 'mdi:vanity-light'
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - height: 110px
+                  - width: 110px
+
+  - title: Garaż
+    path: garage
+    icon: "mdi:garage-variant"
+    badges: []
+    cards:
+
+  - title: Gameroom
+    path: Gameroom
+    icon: "mdi:weight-lifter"
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: " "
+            entity: switch.0x00124b001e728bf5_switch
+            icon: 'mdi:lamp'
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - height: 110px
+                  - width: 110px
+
+  - title: Górna łazienka
+    path: upper-bathroom
+    icon: "mdi:shower"
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                name: temperatura
+                entity: sensor.0x086bd7fffef07ec0_temperature
+              - type: sensor
+                name: wilgotność
+                entity: sensor.0x086bd7fffef07ec0_humidity
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: binary_sensor.0xec1bbdfffe45234b_occupancy
+                name: " "
+                tap_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - height: 110px
+                      - width: 110px
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: " "
+                entity: switch.0xbc33acfffe5eca75_switch
+                icon: 'mdi:track-light'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - height: 110px
+                      - width: 110px
+              - type: custom:button-card
+                name: " "
+                entity: switch.0x680ae2fffeb30561_switch
+                icon: 'mdi:radiator'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - height: 110px
+                      - width: 110px
+              - type: custom:button-card
+                name: " "
+                entity: switch.0xbc33acfffe4c4ee3_switch
+                icon: 'mdi:fan'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - height: 110px
+                      - width: 110px
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: script.dry_towel_in_upper_bathroom
+                name: "dry towel"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+              - type: custom:button-card
+                entity: script.dry_upper_bathroom_after_bath
+                name: "dry bathroom"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+
+  - title: Toaleta
+    path: toilet
+    icon: "mdi:toilet"
+    badges: []
+    cards:
+
+  - title: Sypialnia
+    path: bedroom
+    icon: "mdi:bed-king"
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.gabinet
+          - type: horizontal-stack
+            cards:
+              - type: history-graph
+                entities:
+                  - entity: climate.gabinet
+                hours_to_show: 24
+                refresh_interval: 0
+
+  - title: Pokój Kamila
+    path: kamil-room
+    icon: "mdi:face"
+    badges: []
+    cards:
+
+  - title: Pokój gościnny
+    path: visitors-room
+    icon: "mdi:hat-fedora"
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: " "
+                entity: switch.0x00124b001e733536_switch
+                icon: "mdi:lamp"
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - height: 110px
+                      - width: 110px
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.000a18a9a2fc6d
+          - type: horizontal-stack
+            cards:
+              - type: history-graph
+                entities:
+                  - entity: climate.000a18a9a2fc6d
+                hours_to_show: 24
+                refresh_interval: 0
+
+  - title: Garderoba
+    path: wardrobe
+    icon: "mdi:wardrobe"
+    badges: []
+    cards:
+
+  - title: Strych
+    path: attic
+    icon: "mdi:home-roof"
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: klapa
+            entity: binary_sensor.0x14b457fffe157ca1_contact
+            tap_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - font-size: 0.9em
+                  - height: 110px
+                  - width: 110px
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: " "
+            entity: switch.0x00124b001e731a82_switch
+            icon: 'mdi:vanity-light'
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+                card:
+                  - height: 110px
+                  - width: 110px
+
+  - title: Otoczenie
+    path: outside
+    icon: "mdi:island"
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                name: ciśnienie
+                entity: sensor.0x00158d0004aaded3_pressure
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                name: temperatura zachód
+                entity: sensor.0x000d6ffffe6ece5b_temperature
+              - type: sensor
+                name: wilgotność zachód
+                entity: sensor.0x000d6ffffe6ece5b_humidity
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                name: temperatura północ
+                entity: sensor.0x00158d0004aaded3_temperature
+              - type: sensor
+                name: wilgotność północ
+                entity: sensor.0x00158d0004aaded3_humidity
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: przód
+                entity: switch.0x680ae2fffe096ec9_switch_l1
+                icon: 'mdi:string-lights'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+              - type: custom:button-card
+                name: bok
+                entity: switch.0x680ae2fffe096ec9_switch_l2
+                icon: 'mdi:string-lights'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+              - type: custom:button-card
+                name: tył
+                entity: switch.0x842e14fffedfbfb3_switch_left
+                icon: 'mdi:string-lights'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                    card:
+                      - font-size: 0.9em
+                      - height: 110px
+                      - width: 110px
+
+  - title: Temperatura
+    path: temperature
+    icon: "mdi:thermometer"
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: climate.gabinet
+            name: Gabinet
+            icon: "mdi:thermometer"
+            state_color: true
+          - entity: climate.salon_wykusz_prawy
+            name: Salon
+            icon: "mdi:thermometer"
+            state_color: true
+
+  - title: Drzwi i okna
+    path: doors-and-windows
+    icon: "mdi:door"
+    badges: []
+    cards:
+      - type: entities
+        state_color: true
+        entities:
+          - type: section
+            label: kotłownia
+          - entity: binary_sensor.0xec1bbdfffe399fbd_contact
+          - type: section
+            label: strych
+          - entity: binary_sensor.0x14b457fffe157ca1_contact
+
+  - title: Baterie
+    path: batteries
+    icon: "mdi:battery"
+    badges: []
+    cards:
+      - type: custom:battery-state-card
+        sort_by_level: asc
+        entities:
+          - entity: sensor.0xec1bbdfffee23cb0_battery
+
+  - title: Sterownia
+    path: control-room
+    icon: "mdi:cog-outline"
+    badges: []
+    cards:
+      - type: entities
+        name: stan urządzeń
+        entities:
+          - entity: input_boolean.is_waterpump_enabled
+            name: pompa cyrkulacji

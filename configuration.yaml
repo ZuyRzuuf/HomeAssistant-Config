@@ -1,0 +1,89 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+lovelace:
+    mode: yaml
+    resources:
+        # https://github.com/custom-cards/button-card
+      - url: /hacsfiles/button-card/button-card.js
+        type: module
+        # https://github.com/maxwroc/battery-state-card
+      - url: /hacsfiles/battery-state-card/battery-state-card.js
+        type: module
+        # https://github.com/kalkih/mini-graph-card
+    #  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    #    type: module
+
+recorder:
+    db_url: !secret recorder_db_url
+
+homematic:
+    interfaces:
+        rf:
+            host: !secret homematic_ccu_host
+            resolvenames: json
+            username: !secret homematic_ccu_user
+            password: !secret homematic_ccu_pass
+        ip:
+            host: !secret homematic_ccu_host
+            port: 2010
+            resolvenames: json
+            username: !secret homematic_ccu_user
+            password: !secret homematic_ccu_pass
+        groups:
+            host: !secret homematic_ccu_host
+            port: 9292
+            resolvenames: json
+            username: !secret homematic_ccu_user
+            password: !secret homematic_ccu_pass
+            path: /groups
+    hosts:
+        ccu3:
+            host: !secret homematic_ccu_host
+            port: 2001
+            username: !secret homematic_ccu_user
+            password: !secret homematic_ccu_pass
+ 
+
+binary_sensor:
+  - platform: ping
+    name: desktop
+    host: 192.168.1.125
+    count: 3
+    scan_interval: 60
+  - platform: ping
+    name: laptop_pc
+    host: 192.168.1.179
+    count: 3
+    scan_interval: 60
+  - platform: ping
+    name: samsung_a10
+    host: 192.168.1.74
+    count: 3
+    scan_interval: 60
+  - platform: ping
+    name: mi_10
+    host: 192.168.1.78
+    count: 3
+    scan_interval: 60
+  - platform: ping
+    name: tv_salon
+    host: 192.168.1.127
+    count: 3
+    scan_interval: 60
+    
+device_tracker:
+  - platform: ping
+    hosts:
+        samsung_a10: 192.168.1.74
+        mi_10: 192.168.1.78
