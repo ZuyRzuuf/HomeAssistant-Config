@@ -1,0 +1,153 @@
+- alias: Turn On Both TV Lights
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: f14271f306ff11ebb629e16a9ca45257
+      type: click
+      subtype: long
+      discovery_id: 0x00158d000530908e click_long
+    - platform: device
+      domain: mqtt
+      device_id: 2460ed44070011eba524e184d5dba4cd
+      type: click
+      subtype: long
+      discovery_id: 0x00158d0005724451 click_long
+  condition:
+    condition: or
+    conditions:
+      - condition: device
+        type: is_off
+        device_id: c2ab495806fc11ebab32dd745872745a
+        entity_id: light.0x842e14fffe57d350_light
+        domain: light
+      - condition: device
+        type: is_off
+        device_id: 2b7a04d306fd11eb9d4535398042e8bc
+        entity_id: light.0x842e14fffe57d107_light
+        domain: light
+  action:
+    - type: turn_on
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+    - type: turn_on
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light
+
+- alias: Turn Off Both TV Lights
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: f14271f306ff11ebb629e16a9ca45257
+      type: click
+      subtype: long
+      discovery_id: 0x00158d000530908e click_long
+    - platform: device
+      domain: mqtt
+      device_id: 2460ed44070011eba524e184d5dba4cd
+      type: click
+      subtype: long
+      discovery_id: 0x00158d0005724451 click_long
+  condition:
+    condition: or
+    conditions:
+      - condition: device
+        type: is_on
+        device_id: c2ab495806fc11ebab32dd745872745a
+        entity_id: light.0x842e14fffe57d350_light
+        domain: light
+      - condition: device
+        type: is_on
+        device_id: 2b7a04d306fd11eb9d4535398042e8bc
+        entity_id: light.0x842e14fffe57d107_light
+        domain: light
+  action:
+    - type: turn_off
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+    - type: turn_off
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light
+
+- alias: Turn On Left TV Light
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: f14271f306ff11ebb629e16a9ca45257
+      type: click
+      subtype: single
+      discovery_id: 0x00158d000530908e click_single
+  condition:
+    - condition: device
+      type: is_off
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+  action:
+    - type: turn_on
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+
+- alias: Turn Off Left TV Light
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: f14271f306ff11ebb629e16a9ca45257
+      type: click
+      subtype: single
+      discovery_id: 0x00158d000530908e click_single
+  condition:
+    - condition: device
+      type: is_on
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+  action:
+    - type: turn_off
+      device_id: c2ab495806fc11ebab32dd745872745a
+      entity_id: light.0x842e14fffe57d350_light
+      domain: light
+
+- alias: Turn On Right TV Light
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 2460ed44070011eba524e184d5dba4cd
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0005724451 click_single
+  condition:
+    - condition: device
+      type: is_off
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light
+  action:
+    - type: turn_on
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light
+
+- alias: Turn Off Right TV Light
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 2460ed44070011eba524e184d5dba4cd
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0005724451 click_single
+  condition:
+    - condition: device
+      type: is_on
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light
+  action:
+    - type: turn_off
+      device_id: 2b7a04d306fd11eb9d4535398042e8bc
+      entity_id: light.0x842e14fffe57d107_light
+      domain: light

@@ -24,3 +24,107 @@
       entity_id: switch.0xbc33acfffe4c4d6b_switch
       domain: switch
   mode: restart
+
+- alias: Turn On Water Pump on Week Schedule
+  trigger:
+    - platform: time
+      at: "07:00:00"
+    - platform: time
+      at: "15:50:00"
+    - platform: time
+      at: "19:00:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    type: turn_on
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
+
+- alias: Turn On Water Pump on Saturday Schedule
+  trigger:
+    - platform: time
+      at: "08:00:00"
+  condition:
+    condition: time
+    weekday:
+      - sat
+  action:
+    type: turn_on
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
+
+- alias: Turn On Water Pump on Sunday Schedule
+  trigger:
+    - platform: time
+      at: "08:30:00"
+    - platform: time
+      at: "19:00:00"
+  condition:
+    condition: time
+    weekday:
+      - sun
+  action:
+    type: turn_on
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
+
+- alias: Turn Off Water Pump on Week Schedule
+  trigger:
+    - platform: time
+      at: "08:15:00"
+    - platform: time
+      at: "17:15:00"
+    - platform: time
+      at: "23:59:59"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    type: turn_off
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
+
+- alias: Turn Off Water Pump on Saturday Schedule
+  trigger:
+    - platform: time
+      at: "23:59:59"
+  condition:
+    condition: time
+    weekday:
+      - sat
+  action:
+    type: turn_off
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
+
+- alias: Turn Off Water Pump on Sunday Schedule
+  trigger:
+    - platform: time
+      at: "10:30:00"
+    - platform: time
+      at: "23:59:59"
+  condition:
+    condition: time
+    weekday:
+      - sun
+  action:
+    type: turn_off
+    device_id: ddb29c81048d11eb80237bf808abce29
+    entity_id: switch.water_pump_switch
+    domain: switch
