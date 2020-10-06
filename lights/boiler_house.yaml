@@ -1,0 +1,5 @@
+- platform: group
+  name: Boiler House Lights
+  entities:
+    # back corridor light
+    - switch.0xbc33acfffe4c4d6b_switch

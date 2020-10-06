@@ -1,0 +1,5 @@
+- platform: group
+  name: Office Lights
+  entities:
+    # desk light
+    - light.0x588e81fffe4d34ed_light

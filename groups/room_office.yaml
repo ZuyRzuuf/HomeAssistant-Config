@@ -1,0 +1,6 @@
+name: Office status
+entities:
+  # desktop computer
+  - binary_sensor.desktop
+  # desk light
+  - light.0x588e81fffe4d34ed_light

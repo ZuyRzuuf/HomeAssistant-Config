@@ -1,0 +1,8 @@
+name: Living Room status
+entities:
+  # tv
+  - media_player.samsung_ue55f6700
+  # left tv light
+  - light.0x842e14fffe57d350_light
+  # right tv light
+  - light.0x842e14fffe57d107_light

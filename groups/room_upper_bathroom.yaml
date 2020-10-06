@@ -1,0 +1,8 @@
+name: Upper Bathroom status
+entities:
+  # mirror light
+  - switch.0xbc33acfffe5eca75_switch
+  # fan
+  - switch.0xbc33acfffe4c4ee3_switch
+  # radiator
+  - switch.upper_bathroom_radiator_switch

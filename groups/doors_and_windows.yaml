@@ -1,0 +1,4 @@
+name: Doors and Windows status
+entities:
+  - binary_sensor.0xec1bbdfffe399fbd_contact
+  - binary_sensor.0x14b457fffe157ca1_contact

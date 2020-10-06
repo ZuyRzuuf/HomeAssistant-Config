@@ -1,0 +1,3 @@
+name: Exit Doors status
+entities:
+  - binary_sensor.0xec1bbdfffe399fbd_contact

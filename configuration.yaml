@@ -4,10 +4,12 @@ default_config:
 # Text to speech
 tts: !include tts.yaml
 
-group: !include groups.yaml
+group: !include_dir_named groups/
 automation: !include_dir_merge_list automations/
 script: !include_dir_named scripts/
 scene: !include scenes.yaml
+
+light: !include_dir_merge_list lights/
 
 lovelace: !include lovelace.yaml
 

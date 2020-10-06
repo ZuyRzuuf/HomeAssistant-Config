@@ -1,0 +1,6 @@
+name: Boiler House status
+entities:
+  # back corridor light
+  - switch.0xbc33acfffe4c4d6b_switch
+  # water pump
+  - switch.water_pump_switch
