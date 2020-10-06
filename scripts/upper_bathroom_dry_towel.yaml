@@ -1,0 +1,11 @@
+alias: Dry Towel in Upper Bathroom
+icon: mdi:radiator
+mode: restart
+sequence:
+  - service: switch.turn_on
+    entity_id: switch.upper_bathroom_radiator_switch
+
+  - delay: 00:20:00
+
+  - service: switch.turn_off
+    entity_id: switch.upper_bathroom_radiator_switch

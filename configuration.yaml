@@ -5,10 +5,8 @@ default_config:
 tts: !include tts.yaml
 
 group: !include groups.yaml
-# automation: !include automations.yaml
 automation: !include_dir_merge_list automations/
-# script: !include scripts.yaml
-script: !include_dir_merge_list scripts/
+script: !include_dir_named scripts/
 scene: !include scenes.yaml
 
 lovelace: !include lovelace.yaml
@@ -19,3 +17,4 @@ homematic: !include homematic.yaml
 
 binary_sensor: !include_dir_merge_list binary_sensors/
 device_tracker: !include_dir_merge_list device_trackers/
+input_boolean: !include_dir_merge_list input_booleans/

@@ -73,7 +73,7 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
-            entity: script.dry_towel_in_upper_bathroom
+            entity: script.upper_bathroom_dry_towel
             name: "dry towel"
             icon: "mdi:radiator"
             show_icon: true
@@ -83,7 +83,7 @@ cards:
             styles:
               card: !include ../common_ui_elements/tile_style.yaml
           - type: custom:button-card
-            entity: script.dry_upper_bathroom_after_bath
+            entity: script.upper_bathroom_reduce_humidity
             name: "dry bathroom"
             icon: "mdi:water-percent"
             show_icon: true
