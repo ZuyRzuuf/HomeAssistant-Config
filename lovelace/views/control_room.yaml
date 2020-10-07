@@ -3,8 +3,25 @@ path: control-room
 icon: "mdi:cog-outline"
 badges: []
 cards:
-  - type: entities
-    # label: stan urządzeń
-    entities:
-      - entity: input_boolean.is_waterpump_enabled
-        name: pompa cyrkulacji
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: stan pokoi
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.is_bedroom_occupied
+            name: sypialnia
+          - entity: input_boolean.is_kamil_room_occupied
+            name: pokój Kamila
+          - entity: input_boolean.is_visitors_room_occupied
+            name: pokój gościnny
+          - entity: input_boolean.is_gameroom_occupied
+            name: gameroom
+  # - type: vertical-stack
+  #   cards:
+  #   - type: entities
+  #     label: stan urządzeń
+  #     entities:
+  #       - entity: input_boolean.is_waterpump_enabled
+  #         name: pompa cyrkulacji
