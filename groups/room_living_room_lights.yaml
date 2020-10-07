@@ -1,0 +1,6 @@
+name: Living Room Lights
+entities:
+    # left tv light
+    - light.0x842e14fffe57d350_light
+    # right tv light
+    - light.0x842e14fffe57d107_light
