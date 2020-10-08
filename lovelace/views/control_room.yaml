@@ -6,6 +6,19 @@ cards:
   - type: vertical-stack
     cards:
       - type: entities
+        title: tryby
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.is_home_office_mode
+            name: home office
+          - entity: input_boolean.is_party_mode
+            name: impreza
+          - entity: input_boolean.is_guest_mode
+            name: gościnny
+          - entity: input_boolean.is_holiday_mode
+            name: wakacyjny
+      - type: entities
         title: stan pokoi
         show_header_toggle: false
         state_color: true
@@ -18,10 +31,10 @@ cards:
             name: pokój gościnny
           - entity: input_boolean.is_gameroom_occupied
             name: gameroom
-  # - type: vertical-stack
-  #   cards:
-  #   - type: entities
-  #     label: stan urządzeń
-  #     entities:
-  #       - entity: input_boolean.is_waterpump_enabled
-  #         name: pompa cyrkulacji
+      - type: entities
+        title: urządzenia
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.is_water_pump_enabled
+            name: pompa cyrkulacji
