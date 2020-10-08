@@ -1,0 +1,4 @@
+name: Kitchen status
+entities:
+  # dishwasher
+  - sensor.0x842e14fffe12670c_power

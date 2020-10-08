@@ -1,0 +1,4 @@
+name: Gameroom status
+entities:
+  # night light
+  - switch.0x00124b001e728bf5_switch

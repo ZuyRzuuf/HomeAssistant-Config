@@ -26,24 +26,128 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
-            entity: script.dry_towel_in_upper_bathroom
-            name: "dry towel"
+            entity: binary_sensor.is_kitchen_active
+            name: " "
             show_icon: true
             show_name: true
             show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+            hold_action:
+              action: more-info
             icon_height: 64px
             styles:
-              card:
-                !include ../common_ui_elements/tile_style.yaml
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_livingroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/living-room
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_office_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/office
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_boiler_house_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/boiler-house
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+  - type: vertical-stack
+    cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
-            entity: script.dry_upper_bathroom_after_bath
-            name: "dry bathroom"
+            entity: binary_sensor.is_gameroom_active
+            name: " "
             show_icon: true
             show_name: true
             show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/gameroom
+            hold_action:
+              action: more-info
             icon_height: 64px
             styles:
-              card:
-                !include ../common_ui_elements/tile_style.yaml
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_upper_bathroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/upper-bathroom
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_visitors_room_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/visitors-room
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+  - type: vertical-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: script.dry_towel_in_upper_bathroom
+                name: "dry towel"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                  card: !include ../common_ui_elements/tile_style.yaml
+              - type: custom:button-card
+                entity: script.dry_upper_bathroom_after_bath
+                name: "dry bathroom"
+                show_icon: true
+                show_name: true
+                show_state: false
+                icon_height: 64px
+                styles:
+                  card: !include ../common_ui_elements/tile_style.yaml

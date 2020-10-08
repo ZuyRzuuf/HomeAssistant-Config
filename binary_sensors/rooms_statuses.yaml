@@ -1,0 +1,84 @@
+- platform: template
+  sensors:
+    is_kitchen_active:
+      friendly_name: Is Kitchen Active
+      value_template: >-
+        {{ states('sensor.0x842e14fffe12670c_power')|float > 0 }}
+      icon_template: >
+        {% if is_state('group.room_kitchen', 'on') %}
+          mdi:chef-hat
+        {% else %}
+          mdi:chef-hat
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_livingroom_active:
+      friendly_name: Is Livingroom Active
+      value_template: "{{is_state('group.room_livingroom', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_livingroom', 'on') %}
+          mdi:sofa
+        {% else %}
+          mdi:sofa-outline
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_office_active:
+      friendly_name: Is Office Active
+      value_template: "{{is_state('group.room_office', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_office', 'on') %}
+          mdi:desk
+        {% else %}
+          mdi:desk
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_boiler_house_active:
+      friendly_name: Is Boiler House Active
+      value_template: "{{is_state('group.room_boiler_house', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_boiler_house', 'on') %}
+          mdi:water-boiler
+        {% else %}
+          mdi:water-boiler-off
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_gameroom_active:
+      friendly_name: Is Gameroom Active
+      value_template: "{{is_state('group.room_gameroom', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_gameroom', 'on') %}
+          mdi:weight-lifter
+        {% else %}
+          mdi:weight-lifter
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_upper_bathroom_active:
+      friendly_name: Is Upper Bathroom Active
+      value_template: "{{is_state('group.room_upper_bathroom', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_upper_bathroom', 'on') %}
+          mdi:shower
+        {% else %}
+          mdi:shower
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_visitors_room_active:
+      friendly_name: Is Visitors Room Active
+      value_template: "{{is_state('group.room_visitors_room', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_visitors_room', 'on') %}
+          mdi:hat-fedora
+        {% else %}
+          mdi:hat-fedora
+        {% endif %}

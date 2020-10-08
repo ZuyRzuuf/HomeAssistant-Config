@@ -1,0 +1,4 @@
+name: Visitors Room status
+entities:
+  # night light
+  - switch.visitors_room_night_light_switch
