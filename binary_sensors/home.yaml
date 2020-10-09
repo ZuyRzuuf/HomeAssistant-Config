@@ -1,0 +1,35 @@
+- platform: template
+  sensors:
+    is_home_occupied:
+      friendly_name: Is Home Occupied
+      value_template: >-
+        {{
+          is_state('binary_sensor.is_krzysiek_home', 'on')
+          or
+          is_state('binary_sensor.is_anetka_home', 'on')
+          or
+          is_state('input_boolean.is_guest_mode', 'on')
+        }}
+      icon_template: >
+        {% if is_state('binary_sensor.is_home_occupied', 'on') %}
+          mdi:home-account
+        {% else %}
+          mdi:home-outline
+        {% endif %}
+
+- platform: template
+  sensors:
+    day_off_mode:
+      friendly_name: Day Off Mode
+      value_template: >-
+        {{
+          is_state('binary_sensor.workday_sensor', 'off')
+          or
+          is_state('input_boolean.is_day_off_mode', 'on')
+        }}
+
+- platform: template
+  sensors:
+    bedtime_mode:
+      friendly_name: Is Bedtime
+      value_template: "off"

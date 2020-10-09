@@ -12,6 +12,8 @@ cards:
         entities:
           - entity: input_boolean.is_home_office_mode
             name: home office
+          - entity: input_boolean.is_day_off_mode
+            name: dzień wolny
           - entity: input_boolean.is_party_mode
             name: impreza
           - entity: input_boolean.is_guest_mode
@@ -32,9 +34,18 @@ cards:
           - entity: input_boolean.is_gameroom_occupied
             name: gameroom
       - type: entities
-        title: urządzenia
+        title: tryb ręczny
         show_header_toggle: false
         state_color: true
         entities:
-          - entity: input_boolean.is_water_pump_enabled
+          - entity: input_boolean.water_pump_manual_mode
             name: pompa cyrkulacji
+      - type: entities
+        title: status (podgląd)
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: binary_sensor.day_off_mode
+            name: weekend mode
+          - entity: binary_sensor.bedtime_mode
+            name: bedtime mode

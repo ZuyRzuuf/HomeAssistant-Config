@@ -10,7 +10,7 @@
   scan_interval: 60
 - platform: ping
   name: samsung_a10
-  host: 192.168.1.74
+  host: 192.168.1.210
   count: 3
   scan_interval: 60
 - platform: ping

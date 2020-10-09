@@ -1,0 +1,4 @@
+name: Attic status
+entities:
+  # light
+  - switch.attic_light_switch

@@ -127,6 +127,36 @@ cards:
             icon_height: 64px
             styles:
               card: !include ../common_ui_elements/tile_style.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_attic_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/attic
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_outdoor_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/outdoor
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../common_ui_elements/tile_style.yaml
   - type: vertical-stack
     cards:
       - type: vertical-stack

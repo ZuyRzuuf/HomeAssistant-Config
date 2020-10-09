@@ -1,0 +1,17 @@
+- platform: template
+  sensors:
+    is_krzysiek_home:
+      friendly_name: Is Krzysiek Home
+      value_template: >-
+        {{
+          is_state('device_tracker.mi_10', 'home')
+        }}
+
+- platform: template
+  sensors:
+    is_anetka_home:
+      friendly_name: Is Anetka Home
+      value_template: >-
+        {{
+          is_state('device_tracker.samsung_a10', 'home')
+        }}

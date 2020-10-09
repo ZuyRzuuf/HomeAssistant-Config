@@ -1,0 +1,64 @@
+# Home Lifecycle
+# morning       06:00 | 07:00
+# awake         07:00 | 08:00
+# breakfast     07:30 | 08:30
+# work          08:00           only when is_state('binary_sensor.day_off_mode', 'off')
+# housework             09:00   only when is_state('binary_sensor.day_off_mode', 'on')
+# return_home   16:10           only when is_state('binary_sensor.day_off_mode', 'off')
+# coffee_break  16:30           only when is_state('binary_sensor.day_off_mode', 'off')
+# housework     17:00           only when is_state('binary_sensor.day_off_mode', 'off')
+# dinner        20:00 | 20:00
+# relax         20:30 | 20:30
+# bedtime       22:00 | 23:00
+# sleep         23:30 | 00:00
+- platform: template
+  sensors:
+    home_lifecycle:
+      friendly_name: Home Lifecycle
+      value_template: >-
+        {% set current_time = states('sensor.time') %}
+          {# status during the workday #}
+          {% if is_state('binary_sensor.day_off_mode', 'off') %}
+            {% if   '06:00' <= current_time < '07:00' %}
+              morning
+            {% elif '07:00' <= current_time < '07:30' %}
+              awake
+            {% elif '07:30' <= current_time < '08:00' %}
+              breakfast
+            {% elif '08:00' <= current_time < '16:10' %}
+              work
+            {% elif '16:10' <= current_time < '16:30' %}
+              return_home
+            {% elif '16:30' <= current_time < '17:00' %}
+              coffee_break
+            {% elif '17:00' <= current_time < '20:00' %}
+              housework
+            {% elif '20:00' <= current_time < '20:30' %}
+              dinner
+            {% elif '20:30' <= current_time < '22:00' %}
+              relax
+            {% elif '22:00' <= current_time < '23:00' %}
+              bedtime
+            {% else %}
+              sleep
+            {% endif %}
+          {# status during the day off #}
+          {% else %}
+            {% if   '07:00' <= current_time < '08:00' %}
+              morning
+            {% elif '08:00' <= current_time < '08:30' %}
+              awake
+            {% elif '08:30' <= current_time < '09:00' %}
+              breakfast
+            {% elif '09:00' <= current_time < '20:00' %}
+              housework
+            {% elif '20:00' <= current_time < '20:30' %}
+              dinner
+            {% elif '20:30' <= current_time < '23:00' %}
+              relax
+            {% elif '23:00' <= current_time < '00:00' %}
+              bedtime
+            {% else %}
+              sleep
+            {% endif %}
+          {% endif %}

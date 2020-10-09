@@ -20,6 +20,7 @@ homematic: !include homematic.yaml
 binary_sensor: !include_dir_merge_list binary_sensors/
 device_tracker: !include_dir_merge_list device_trackers/
 input_boolean: !include_dir_named input_booleans/
+sensor: !include_dir_merge_list sensors/
 # homeassistant:
 #   customize:
 #     input_boolean.is_visitors_room_occupied:
