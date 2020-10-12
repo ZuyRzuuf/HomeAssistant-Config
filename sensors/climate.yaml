@@ -1,0 +1,53 @@
+- platform: template
+  sensors:
+    temperature_livingroom:
+      friendly_name: "LivingRoom Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.int0000001", "current_temperature") }}
+      unit_of_measurement: "°C"
+
+- platform: template
+  sensors:
+    temperature_office:
+      friendly_name: "Office Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.gabinet", "current_temperature") }}
+      unit_of_measurement: "°C"
+
+- platform: template
+  sensors:
+    temperature_gameroom:
+      friendly_name: "Gameroom Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.int0000003", "current_temperature") }}
+      unit_of_measurement: "°C"
+
+- platform: template
+  sensors:
+    temperature_bedroom:
+      friendly_name: "Bedroom Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.000a1a49a1145f", "current_temperature") }}
+      unit_of_measurement: "°C"
+
+- platform: template
+  sensors:
+    temperature_kamil_room:
+      friendly_name: "Kamil Room Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.000a1a49a11b83", "current_temperature") }}
+      unit_of_measurement: "°C"
+
+- platform: template
+  sensors:
+    temperature_visitors_room:
+      friendly_name: "Visitors Room Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.000a18a9a2fc6d", "current_temperature") }}
+      unit_of_measurement: "°C"

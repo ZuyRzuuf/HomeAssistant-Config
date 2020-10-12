@@ -1,0 +1,7 @@
+name: Upper Bathroom Fan Off Delay
+unit_of_measurement: min
+min: 15
+max: 30
+initial: 15
+step: 1
+mode: slider

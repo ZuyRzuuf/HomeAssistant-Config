@@ -2,4 +2,17 @@ title: Pokój Kamila
 path: kamil-room
 icon: "mdi:face"
 badges: []
-# cards:
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.000a1a49a11b83
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: climate.000a1a49a11b83
+            hours_to_show: 24
+            refresh_interval: 0

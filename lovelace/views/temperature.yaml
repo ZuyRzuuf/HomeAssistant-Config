@@ -5,11 +5,31 @@ badges: []
 cards:
   - type: entities
     entities:
-      - entity: climate.gabinet
+      - entity: sensor.temperature_office
         name: Gabinet
         icon: "mdi:thermometer"
         state_color: true
-      - entity: climate.salon_wykusz_prawy
+      - entity: sensor.temperature_livingroom
         name: Salon
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: sensor.temperature_bedroom
+        name: Sypialnia
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: sensor.temperature_gameroom
+        name: Gameroom
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: sensor.temperature_kamil_room
+        name: Pokój Kamila
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: sensor.temperature_visitors_room
+        name: Pokój Gościnny
+        icon: "mdi:thermometer"
+        state_color: true
+      - entity: sensor.0x086bd7fffef07ec0_temperature
+        name: Górna Łazienka
         icon: "mdi:thermometer"
         state_color: true

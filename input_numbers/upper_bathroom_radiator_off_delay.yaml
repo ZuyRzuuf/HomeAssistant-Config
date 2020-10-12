@@ -1,0 +1,7 @@
+name: Upper Bathroom Radiator Off Delay
+unit_of_measurement: min
+min: 20
+max: 45
+initial: 30
+step: 5
+mode: slider

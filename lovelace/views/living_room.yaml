@@ -17,8 +17,12 @@ cards:
             icon: "mdi:lamp"
       - type: horizontal-stack
         cards:
+          - type: media-control
+            entity: media_player.samsung_ue55f6700
+      - type: horizontal-stack
+        cards:
           - type: thermostat
-            entity: climate.salon_anka
+            entity: climate.int0000001
       - type: horizontal-stack
         cards:
           - type: history-graph
