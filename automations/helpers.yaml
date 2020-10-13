@@ -1,0 +1,31 @@
+- alias: Turn Off Home Office Mode During Day Off
+  trigger:
+    platform: state
+    entity_id: input_boolean.is_day_off_mode
+    from: "off"
+    to: "on"
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.is_home_office_mode
+
+- alias: Turn Off Day Off Mode During Home Office
+  trigger:
+    platform: state
+    entity_id: input_boolean.is_home_office_mode
+    from: "off"
+    to: "on"
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.is_day_off_mode
+
+- alias: Turn Off Day Off and Home Office Mode During Holiday
+  trigger:
+    platform: state
+    entity_id: input_boolean.is_holiday_mode
+    from: "off"
+    to: "on"
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.is_day_off_mode
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.is_home_office_mode
