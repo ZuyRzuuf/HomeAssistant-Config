@@ -91,9 +91,9 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
+      temperature: 22
+      target_temp_high: 23
+      target_temp_low: 21
       hvac_mode: heat
 
 - alias: Set Temperature for Standby in Gameroom
@@ -105,9 +105,9 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
+      temperature: 19
+      target_temp_high: 20
+      target_temp_low: 18
       hvac_mode: heat
 
 - alias: Set Temperature for Off in Gameroom
@@ -333,3 +333,21 @@
   action:
     service: switch.turn_off
     entity_id: switch.upper_bathroom_radiator_switch
+
+- alias: Turn On Gas Stove If Any Thermostat Needs This
+  trigger:
+    platform: state
+    entity_id: binary_sensor.home_temperature
+    to: "on" # for device_class cold this means "cold"
+  action:
+    entity_id: switch.tasmota_tasmota # Gas Stove Switch
+    service: switch.turn_on
+
+- alias: Turn Off Gas Stove If No Thermostat Needs This
+  trigger:
+    platform: state
+    entity_id: binary_sensor.home_temperature
+    to: "off" # for device_class cold this means "normal"
+  action:
+    entity_id: switch.tasmota_tasmota # Gas Stove Switch
+    service: switch.turn_off

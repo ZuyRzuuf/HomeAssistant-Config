@@ -1,68 +1,33 @@
-- id: '1601637837634'
-  alias: Turn On Office Desk Light on 100%
-  description: ''
+- alias: Toggle Office Desk Light
   trigger:
-  - platform: device
-    domain: mqtt
-    device_id: 27ed45f1049f11eb8a9077060d96d069
-    type: click
-    subtype: single
-    discovery_id: 0x00158d0005724537 click_single
-  condition:
-  - condition: device
-    type: is_off
-    device_id: eb5ab563049611ebb27f7d77bdd06217
-    entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
+    platform: mqtt
+    topic: zigbee2mqtt/Office Desk Light Switch/click
+    payload: single
   action:
-  - type: turn_on
-    device_id: eb5ab563049611ebb27f7d77bdd06217
+    service: light.toggle
     entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
-    brightness_pct: 100
   mode: single
-- id: '1601637890897'
-  alias: Turn Off Office Desk Light
-  description: ''
+
+- alias: Turn On Office Desk Light on 50%
   trigger:
-  - platform: device
-    domain: mqtt
-    device_id: 27ed45f1049f11eb8a9077060d96d069
-    type: click
-    subtype: single
-    discovery_id: 0x00158d0005724537 click_single
-  condition:
-  - condition: device
-    type: is_on
-    device_id: eb5ab563049611ebb27f7d77bdd06217
-    entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
+    platform: mqtt
+    topic: zigbee2mqtt/Office Desk Light Switch/click
+    payload: double
   action:
-  - type: turn_off
-    device_id: eb5ab563049611ebb27f7d77bdd06217
-    entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
+    service: light.turn_on
+    data:
+      entity_id: light.0x588e81fffe4d34ed_light
+      brightness_pct: 50
   mode: single
-- id: '1601638041715'
-  alias: Turn On Office Desk Light on 50%
-  description: ''
+
+- alias: Turn On Office Desk Light on 100%
   trigger:
-  - platform: device
-    domain: mqtt
-    device_id: 27ed45f1049f11eb8a9077060d96d069
-    type: click
-    subtype: double
-    discovery_id: 0x00158d0005724537 click_double
-  condition:
-  - condition: device
-    type: is_off
-    device_id: eb5ab563049611ebb27f7d77bdd06217
-    entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
+    platform: mqtt
+    topic: zigbee2mqtt/Office Desk Light Switch/click
+    payload: triple
   action:
-  - type: turn_on
-    device_id: eb5ab563049611ebb27f7d77bdd06217
-    entity_id: light.0x588e81fffe4d34ed_light
-    domain: light
-    brightness_pct: 50
+    service: light.turn_on
+    data:
+      entity_id: light.0x588e81fffe4d34ed_light
+      brightness_pct: 100
   mode: single
