@@ -20,6 +20,8 @@ cards:
             name: gościnny
           - entity: input_boolean.is_holiday_mode
             name: wakacyjny
+          - entity: input_boolean.heating_season
+            name: ogrzewanie
       - type: entities
         title: stan pokoi
         show_header_toggle: false
@@ -40,6 +42,8 @@ cards:
         entities:
           - entity: input_boolean.water_pump_manual_mode
             name: pompa cyrkulacji
+          - entity: input_boolean.gas_stove_manual_mode
+            name: piec
       - type: entities
         title: status (podgląd)
         show_header_toggle: false

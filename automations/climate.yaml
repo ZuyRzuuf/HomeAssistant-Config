@@ -7,10 +7,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.gabinet
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_office_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Office
   trigger:
@@ -21,10 +18,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.gabinet
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_office_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Office
   trigger:
@@ -36,9 +30,6 @@
     data:
       entity_id: climate.gabinet
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Set Temperature for Heat in Livingroom
   trigger:
@@ -49,10 +40,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000001
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_livingroom_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Livingroom
   trigger:
@@ -63,10 +51,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000001
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_livingroom_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Livingroom
   trigger:
@@ -78,9 +63,6 @@
     data:
       entity_id: climate.int0000001
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Set Temperature for Heat in Gameroom
   trigger:
@@ -91,10 +73,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: 22
-      target_temp_high: 23
-      target_temp_low: 21
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_gameroom_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Gameroom
   trigger:
@@ -105,10 +84,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: 19
-      target_temp_high: 20
-      target_temp_low: 18
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_gameroom_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Gameroom
   trigger:
@@ -120,9 +96,6 @@
     data:
       entity_id: climate.int0000003
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Set Temperature for Heat in Bedroom
   trigger:
@@ -133,10 +106,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a1145f
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_bedroom_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Bedroom
   trigger:
@@ -147,10 +117,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a1145f
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_bedroom_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Bedroom
   trigger:
@@ -162,9 +129,6 @@
     data:
       entity_id: climate.000a1a49a1145f
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Set Temperature for Heat in Kamil Room
   trigger:
@@ -175,10 +139,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a11b83
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_kamil_room_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Kamil Room
   trigger:
@@ -189,10 +150,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a11b83
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_kamil_room_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Kamil Room
   trigger:
@@ -204,9 +162,6 @@
     data:
       entity_id: climate.000a1a49a11b83
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Set Temperature for Heat in Visitors Room
   trigger:
@@ -217,10 +172,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a18a9a2fc6d
-      temperature: 20
-      target_temp_high: 21
-      target_temp_low: 19
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_visitors_room_heat_comfort') | float }}"
 
 - alias: Set Temperature for Standby in Visitors Room
   trigger:
@@ -231,10 +183,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a18a9a2fc6d
-      temperature: 17
-      target_temp_high: 18
-      target_temp_low: 16
-      hvac_mode: heat
+      temperature: "{{ states('input_number.climate_visitors_room_standby_comfort') | float }}"
 
 - alias: Set Temperature for Off in Visitors Room
   trigger:
@@ -246,9 +195,6 @@
     data:
       entity_id: climate.000a18a9a2fc6d
       temperature: 5
-      target_temp_high: 5
-      target_temp_low: 5
-      hvac_mode: off
 
 - alias: Turn On Radiator for Heat in Upper Bathroom
   trigger:

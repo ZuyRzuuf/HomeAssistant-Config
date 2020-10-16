@@ -1,0 +1,7 @@
+name: Low Standby Temperature in Upper Bathroom
+initial: 16
+min: 14
+max: 18
+step: 0.5
+unit_of_measurement: °C
+mode: slider

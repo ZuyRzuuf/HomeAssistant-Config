@@ -3,33 +3,220 @@ path: temperature
 icon: "mdi:thermometer"
 badges: []
 cards:
-  - type: entities
-    entities:
-      - entity: sensor.temperature_office
-        name: Gabinet
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.temperature_livingroom
-        name: Salon
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.temperature_bedroom
-        name: Sypialnia
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.temperature_gameroom
-        name: Gameroom
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.temperature_kamil_room
-        name: Pokój Kamila
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.temperature_visitors_room
-        name: Pokój Gościnny
-        icon: "mdi:thermometer"
-        state_color: true
-      - entity: sensor.0x086bd7fffef07ec0_temperature
-        name: Górna Łazienka
-        icon: "mdi:thermometer"
-        state_color: true
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - entity: sensor.temperature_office
+            name: Gabinet
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_office
+                name: false
+          - entity: sensor.temperature_livingroom
+            name: Salon
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_livingroom
+                name: false
+          - entity: sensor.temperature_bedroom
+            name: Sypialnia
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_bedroom
+                name: false
+          - entity: sensor.temperature_gameroom
+            name: Gameroom
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_gameroom
+                name: false
+          - entity: sensor.temperature_kamil_room
+            name: Pokój Kamila
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_kamil_room
+                name: false
+          - entity: sensor.temperature_visitors_room
+            name: Pokój Gościnny
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_visitors_room
+                name: false
+          - entity: sensor.0x086bd7fffef07ec0_temperature
+            name: Górna Łazienka
+            icon: "mdi:thermometer"
+            secondary_info: last-changed
+            type: custom:multiple-entity-row
+            entities:
+              - entity: sensor.heating_mode_upper_bathroom
+                name: false
+  - type: vertical-stack
+    title: ustawienia temperatury
+    cards:
+      - type: glance
+        title: "gabinet"
+        columns: 6
+        entities:
+          - entity: input_number.climate_office_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "salon"
+        columns: 6
+        entities:
+          - entity: input_number.climate_livingroom_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "gameroom"
+        columns: 6
+        entities:
+          - entity: input_number.climate_gameroom_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "sypialnia"
+        columns: 6
+        entities:
+          - entity: input_number.climate_bedroom_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "pokj Kamila"
+        columns: 6
+        entities:
+          - entity: input_number.climate_kamil_room_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "pokój gościnny"
+        columns: 6
+        entities:
+          - entity: input_number.climate_visitors_room_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_standby_low
+            name: min.
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "górna łazienka"
+        columns: 6
+        entities:
+          - entity: input_number.climate_upper_bathroom_heat_comfort
+            name: grzanie
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_heat_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_heat_low
+            name: mini.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_standby_comfort
+            name: spoczynek
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_standby_high
+            name: maks.
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_standby_low
+            name: min.
+            icon: "mdi:thermometer"

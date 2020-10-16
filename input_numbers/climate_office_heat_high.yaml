@@ -1,0 +1,7 @@
+name: High Heat Temperature in Office
+initial: 21
+min: 19
+max: 23
+step: 0.5
+unit_of_measurement: °C
+mode: slider

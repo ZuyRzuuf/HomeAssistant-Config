@@ -1,10 +1,13 @@
 mode: yaml
 resources:
-    # https://github.com/custom-cards/button-card
+  # https://github.com/custom-cards/button-card
   - url: /hacsfiles/button-card/button-card.js
     type: module
     # https://github.com/maxwroc/battery-state-card
   - url: /hacsfiles/battery-state-card/battery-state-card.js
+    type: module
+    # https://github.com/benct/lovelace-multiple-entity-row
+  - url: /hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js
     type: module
     # https://github.com/kalkih/mini-graph-card
 #  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js

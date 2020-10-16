@@ -1,0 +1,7 @@
+name: Low Heat Temperature in Visitors Room
+initial: 19
+min: 17
+max: 21
+step: 0.5
+unit_of_measurement: °C
+mode: slider

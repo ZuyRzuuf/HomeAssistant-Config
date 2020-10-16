@@ -30,7 +30,7 @@ cards:
         cards:
           - type: custom:button-card
             name: przód
-            entity: switch.0x680ae2fffe096ec9_switch_l2
+            entity: switch.0x60a423fffe94f80c_switch_left
             icon: "mdi:string-lights"
             tap_action:
               action: toggle
@@ -45,7 +45,7 @@ cards:
                 !include ../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             name: bok
-            entity: switch.0x680ae2fffe096ec9_switch_l1
+            entity: switch.0x60a423fffe9770a3_switch_left
             icon: "mdi:string-lights"
             tap_action:
               action: toggle
