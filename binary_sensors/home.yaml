@@ -56,13 +56,13 @@
           (
             is_state("sensor.heating_mode_livingroom", "heat") 
             and 
-            state_attr("climate.int0000001", "current_temperature") < states('input_number.climate_livingroom_heat_low') | float 
+            state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_heat_low') | float 
           )
           or
           (
             is_state("sensor.heating_mode_livingroom", "standby") 
             and 
-            state_attr("climate.int0000001", "current_temperature") < states('input_number.climate_livingroom_standby_low') | float
+            state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_standby_low') | float
           )
           or
           (
@@ -130,13 +130,13 @@
           (
             is_state("sensor.heating_mode_livingroom", "heat") 
             and 
-            state_attr("climate.int0000001", "current_temperature") > states('input_number.climate_livingroom_heat_high') | float 
+            state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_heat_high') | float 
           )
           and
           (
             is_state("sensor.heating_mode_livingroom", "standby") 
             and 
-            state_attr("climate.int0000001", "current_temperature") > states('input_number.climate_livingroom_standby_high') | float
+            state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_standby_high') | float
           )
           and
           (
@@ -188,4 +188,6 @@
           )
         %}
           off
+        {% else %}
+          on
         {% endif %}

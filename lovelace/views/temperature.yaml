@@ -7,6 +7,11 @@ cards:
     cards:
       - type: entities
         entities:
+          - entity: binary_sensor.home_temperature
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
           - entity: sensor.temperature_office
             name: Gabinet
             icon: "mdi:thermometer"
@@ -15,7 +20,11 @@ cards:
             entities:
               - entity: sensor.heating_mode_office
                 name: false
-          - entity: sensor.temperature_livingroom
+              - entity: sensor.climate_office_temp_low
+                name: low
+              - entity: sensor.climate_office_temp_high
+                name: high
+          - entity: sensor.0x000d6ffffe65b8da_temperature
             name: Salon
             icon: "mdi:thermometer"
             secondary_info: last-changed
@@ -23,6 +32,10 @@ cards:
             entities:
               - entity: sensor.heating_mode_livingroom
                 name: false
+              - entity: sensor.climate_livingroom_temp_low
+                name: low
+              - entity: sensor.climate_livingroom_temp_high
+                name: high
           - entity: sensor.temperature_bedroom
             name: Sypialnia
             icon: "mdi:thermometer"
@@ -31,7 +44,11 @@ cards:
             entities:
               - entity: sensor.heating_mode_bedroom
                 name: false
-          - entity: sensor.temperature_gameroom
+              - entity: sensor.climate_bedroom_temp_low
+                name: low
+              - entity: sensor.climate_bedroom_temp_high
+                name: high
+          - entity: sensor.0x000d6ffffe6eca55_temperature
             name: Gameroom
             icon: "mdi:thermometer"
             secondary_info: last-changed
@@ -39,6 +56,10 @@ cards:
             entities:
               - entity: sensor.heating_mode_gameroom
                 name: false
+              - entity: sensor.climate_gameroom_temp_low
+                name: low
+              - entity: sensor.climate_gameroom_temp_high
+                name: high
           - entity: sensor.temperature_kamil_room
             name: Pokój Kamila
             icon: "mdi:thermometer"
@@ -47,6 +68,10 @@ cards:
             entities:
               - entity: sensor.heating_mode_kamil_room
                 name: false
+              - entity: sensor.climate_kamil_room_temp_low
+                name: low
+              - entity: sensor.climate_kamil_room_temp_high
+                name: high
           - entity: sensor.temperature_visitors_room
             name: Pokój Gościnny
             icon: "mdi:thermometer"
@@ -55,6 +80,10 @@ cards:
             entities:
               - entity: sensor.heating_mode_visitors_room
                 name: false
+              - entity: sensor.climate_visitors_room_temp_low
+                name: low
+              - entity: sensor.climate_visitors_room_temp_high
+                name: high
           - entity: sensor.0x086bd7fffef07ec0_temperature
             name: Górna Łazienka
             icon: "mdi:thermometer"
@@ -63,6 +92,10 @@ cards:
             entities:
               - entity: sensor.heating_mode_upper_bathroom
                 name: false
+              - entity: sensor.climate_upper_bathroom_temp_low
+                name: low
+              - entity: sensor.climate_upper_bathroom_temp_high
+                name: high
   - type: vertical-stack
     title: ustawienia temperatury
     cards:

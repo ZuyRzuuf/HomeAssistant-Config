@@ -1,11 +1,11 @@
-- platform: template
-  sensors:
-    temperature_livingroom:
-      friendly_name: "LivingRoom Temperature"
-      device_class: temperature
-      value_template: >-
-        {{ state_attr("climate.int0000001", "current_temperature") }}
-      unit_of_measurement: "°C"
+# - platform: template
+#   sensors:
+#     temperature_livingroom:
+#       friendly_name: "LivingRoom Temperature"
+#       device_class: temperature
+#       value_template: >-
+#         {{ state_attr("climate.int0000001", "current_temperature") }}
+#       unit_of_measurement: "°C"
 
 - platform: template
   sensors:
@@ -16,14 +16,14 @@
         {{ state_attr("climate.gabinet", "current_temperature") }}
       unit_of_measurement: "°C"
 
-- platform: template
-  sensors:
-    temperature_gameroom:
-      friendly_name: "Gameroom Temperature"
-      device_class: temperature
-      value_template: >-
-        {{ state_attr("climate.int0000003", "current_temperature") }}
-      unit_of_measurement: "°C"
+# - platform: template
+#   sensors:
+#     temperature_gameroom:
+#       friendly_name: "Gameroom Temperature"
+#       device_class: temperature
+#       value_template: >-
+#         {{ state_attr("climate.int0000003", "current_temperature") }}
+#       unit_of_measurement: "°C"
 
 - platform: template
   sensors:
@@ -241,4 +241,186 @@
           {% endif %}
         {% else %}
           off
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_office_temp_low:
+      friendly_name: Climate Office Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_office", "heat") %}
+          {{ states("input_number.climate_office_heat_low") }}
+        {% elif is_state("sensor.heating_mode_office", "standby") %}
+          {{ states("input_number.climate_office_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_office_temp_high:
+      friendly_name: Climate Office Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_office", "heat") %}
+          {{ states("input_number.climate_office_heat_high") }}
+        {% elif is_state("sensor.heating_mode_office", "standby") %}
+          {{ states("input_number.climate_office_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_livingroom_temp_low:
+      friendly_name: Climate Livingroom Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_livingroom", "heat") %}
+          {{ states("input_number.climate_livingroom_heat_low") }}
+        {% elif is_state("sensor.heating_mode_livingroom", "standby") %}
+          {{ states("input_number.climate_livingroom_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_livingroom_temp_high:
+      friendly_name: Climate Livingroom Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_livingroom", "heat") %}
+          {{ states("input_number.climate_livingroom_heat_high") }}
+        {% elif is_state("sensor.heating_mode_livingroom", "standby") %}
+          {{ states("input_number.climate_livingroom_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_gameroom_temp_low:
+      friendly_name: Climate Gameroom Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_gameroom", "heat") %}
+          {{ states("input_number.climate_gameroom_heat_low") }}
+        {% elif is_state("sensor.heating_mode_gameroom", "standby") %}
+          {{ states("input_number.climate_gameroom_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_gameroom_temp_high:
+      friendly_name: Climate Gameroom Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_gameroom", "heat") %}
+          {{ states("input_number.climate_gameroom_heat_high") }}
+        {% elif is_state("sensor.heating_mode_gameroom", "standby") %}
+          {{ states("input_number.climate_gameroom_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_bedroom_temp_low:
+      friendly_name: Climate Bedroom Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_bedroom", "heat") %}
+          {{ states("input_number.climate_bedroom_heat_low") }}
+        {% elif is_state("sensor.heating_mode_bedroom", "standby") %}
+          {{ states("input_number.climate_bedroom_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_bedroom_temp_high:
+      friendly_name: Climate Bedroom Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_bedroom", "heat") %}
+          {{ states("input_number.climate_bedroom_heat_high") }}
+        {% elif is_state("sensor.heating_mode_bedroom", "standby") %}
+          {{ states("input_number.climate_bedroom_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_kamil_room_temp_low:
+      friendly_name: Climate Kamil Room Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_kamil_room", "heat") %}
+          {{ states("input_number.climate_kamil_room_heat_low") }}
+        {% elif is_state("sensor.heating_mode_kamil_room", "standby") %}
+          {{ states("input_number.climate_kamil_room_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_kamil_room_temp_high:
+      friendly_name: Climate Kamil Room Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_kamil_room", "heat") %}
+          {{ states("input_number.climate_kamil_room_heat_high") }}
+        {% elif is_state("sensor.heating_mode_kamil_room", "standby") %}
+          {{ states("input_number.climate_kamil_room_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_visitors_room_temp_low:
+      friendly_name: Climate Visitors Room Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_visitors_room", "heat") %}
+          {{ states("input_number.climate_visitors_room_heat_low") }}
+        {% elif is_state("sensor.heating_mode_visitors_room", "standby") %}
+          {{ states("input_number.climate_visitors_room_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_visitors_room_temp_high:
+      friendly_name: Climate Visitors Room Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_visitors_room", "heat") %}
+          {{ states("input_number.climate_visitors_room_heat_high") }}
+        {% elif is_state("sensor.heating_mode_visitors_room", "standby") %}
+          {{ states("input_number.climate_visitors_room_standby_high") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_upper_bathroom_temp_low:
+      friendly_name: Climate Upper Bathroom Temperature Low
+      value_template: >-
+        {% if is_state("sensor.heating_mode_upper_bathroom", "heat") %}
+          {{ states("input_number.climate_upper_bathroom_heat_low") }}
+        {% elif is_state("sensor.heating_mode_upper_bathroom", "standby") %}
+          {{ states("input_number.climate_upper_bathroom_standby_low") }}
+        {% else %}
+          5
+        {% endif %}
+
+- platform: template
+  sensors:
+    climate_upper_bathroom_temp_high:
+      friendly_name: Climate Upper Bathroom Temperature High
+      value_template: >-
+        {% if is_state("sensor.heating_mode_upper_bathroom", "heat") %}
+          {{ states("input_number.climate_upper_bathroom_heat_high") }}
+        {% elif is_state("sensor.heating_mode_upper_bathroom", "standby") %}
+          {{ states("input_number.climate_upper_bathroom_standby_high") }}
+        {% else %}
+          5
         {% endif %}
