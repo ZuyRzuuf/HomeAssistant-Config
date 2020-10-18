@@ -5,7 +5,8 @@ sequence:
   - service: switch.turn_on
     entity_id: switch.upper_bathroom_radiator_switch
 
-  - delay: input_number.upper_bathroom_radiator_off_delay
+#  - delay: input_number.upper_bathroom_radiator_off_delay
+  - delay: '00:30'
 
   - service: switch.turn_off
     entity_id: switch.upper_bathroom_radiator_switch
