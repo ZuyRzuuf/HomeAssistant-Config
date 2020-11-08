@@ -34,160 +34,160 @@
       friendly_name: Is Bedtime
       value_template: "off"
 
-- platform: template
-  sensors:
-    home_temperature:
-      friendly_name: Home Temperature
-      device_class: cold
-      value_template: >-
-        {% if 
-          (
-            is_state("sensor.heating_mode_office", "heat") 
-            and 
-            state_attr("climate.gabinet", "current_temperature") < states('input_number.climate_office_heat_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_office", "standby") 
-            and 
-            state_attr("climate.gabinet", "current_temperature") < states('input_number.climate_office_standby_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_livingroom", "heat") 
-            and 
-            state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_heat_low') | float 
-          )
-          or
-          (
-            is_state("sensor.heating_mode_livingroom", "standby") 
-            and 
-            state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_standby_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_gameroom", "heat") 
-            and 
-            state_attr("climate.int0000003", "current_temperature") < states('input_number.climate_gameroom_heat_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_gameroom", "standby") 
-            and 
-            state_attr("climate.int0000003", "current_temperature") < states('input_number.climate_gameroom_standby_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_bedroom", "heat") 
-            and 
-            state_attr("climate.000a1a49a1145f", "current_temperature") < states('input_number.climate_bedroom_heat_low') | float 
-          )
-          or
-          (
-            is_state("sensor.heating_mode_bedroom", "standby") 
-            and 
-            state_attr("climate.000a1a49a1145f", "current_temperature") < states('input_number.climate_bedroom_standby_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_kamil_room", "heat") 
-            and 
-            state_attr("climate.000a1a49a11b83", "current_temperature") < states('input_number.climate_kamil_room_heat_low') | float 
-          )
-          or
-          (
-            is_state("sensor.heating_mode_kamil_room", "standby") 
-            and 
-            state_attr("climate.000a1a49a11b83", "current_temperature") < states('input_number.climate_kamil_room_standby_low') | float
-          )
-          or
-          (
-            is_state("sensor.heating_mode_visitors_room", "heat") 
-            and 
-            state_attr("climate.000a18a9a2fc6d", "current_temperature") < states('input_number.climate_visitors_room_heat_low') | float 
-          )
-          or
-          (
-            is_state("sensor.heating_mode_visitors_room", "standby") 
-            and 
-            state_attr("climate.000a18a9a2fc6d", "current_temperature") < states('input_number.climate_visitors_room_standby_low') | float
-          )
-        %}
-          on
-        {% elif 
-          (
-            is_state("sensor.heating_mode_office", "heat") 
-            and 
-            state_attr("climate.gabinet", "current_temperature") > states('input_number.climate_office_heat_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_office", "standby") 
-            and 
-            state_attr("climate.gabinet", "current_temperature") > states('input_number.climate_office_standby_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_livingroom", "heat") 
-            and 
-            state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_heat_high') | float 
-          )
-          and
-          (
-            is_state("sensor.heating_mode_livingroom", "standby") 
-            and 
-            state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_standby_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_gameroom", "heat") 
-            and 
-            state_attr("climate.int0000003", "current_temperature") > states('input_number.climate_gameroom_heat_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_gameroom", "standby") 
-            and 
-            state_attr("climate.int0000003", "current_temperature") > states('input_number.climate_gameroom_standby_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_bedroom", "heat") 
-            and 
-            state_attr("climate.000a1a49a1145f", "current_temperature") > states('input_number.climate_bedroom_heat_high') | float 
-          )
-          and
-          (
-            is_state("sensor.heating_mode_bedroom", "standby") 
-            and 
-            state_attr("climate.000a1a49a1145f", "current_temperature") > states('input_number.climate_bedroom_standby_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_kamil_room", "heat") 
-            and 
-            state_attr("climate.000a1a49a11b83", "current_temperature") > states('input_number.climate_kamil_room_heat_high') | float 
-          )
-          and
-          (
-            is_state("sensor.heating_mode_kamil_room", "standby") 
-            and 
-            state_attr("climate.000a1a49a11b83", "current_temperature") > states('input_number.climate_kamil_room_standby_high') | float
-          )
-          and
-          (
-            is_state("sensor.heating_mode_visitors_room", "heat") 
-            and 
-            state_attr("climate.000a18a9a2fc6d", "current_temperature") > states('input_number.climate_visitors_room_heat_high') | float 
-          )
-          and
-          (
-            is_state("sensor.heating_mode_visitors_room", "standby") 
-            and 
-            state_attr("climate.000a18a9a2fc6d", "current_temperature") > states('input_number.climate_visitors_room_standby_high') | float
-          )
-        %}
-          off
-        {% else %}
-          on
-        {% endif %}
+# - platform: template
+#   sensors:
+#     home_temperature:
+#       friendly_name: Home Temperature
+#       device_class: cold
+#       value_template: >-
+#         {% if 
+#           (
+#             is_state("sensor.heating_mode_office", "heat") 
+#             and 
+#             state_attr("climate.gabinet", "current_temperature") < states('input_number.climate_office_heat_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_office", "standby") 
+#             and 
+#             state_attr("climate.gabinet", "current_temperature") < states('input_number.climate_office_standby_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_livingroom", "heat") 
+#             and 
+#             state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_heat_low') | float 
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_livingroom", "standby") 
+#             and 
+#             state_attr("sensor.0x000d6ffffe65b8da_temperature", "current_temperature") < states('input_number.climate_livingroom_standby_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_gameroom", "heat") 
+#             and 
+#             state_attr("climate.int0000003", "current_temperature") < states('input_number.climate_gameroom_heat_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_gameroom", "standby") 
+#             and 
+#             state_attr("climate.int0000003", "current_temperature") < states('input_number.climate_gameroom_standby_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_bedroom", "heat") 
+#             and 
+#             state_attr("climate.000a1a49a1145f", "current_temperature") < states('input_number.climate_bedroom_heat_low') | float 
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_bedroom", "standby") 
+#             and 
+#             state_attr("climate.000a1a49a1145f", "current_temperature") < states('input_number.climate_bedroom_standby_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_kamil_room", "heat") 
+#             and 
+#             state_attr("climate.000a1a49a11b83", "current_temperature") < states('input_number.climate_kamil_room_heat_low') | float 
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_kamil_room", "standby") 
+#             and 
+#             state_attr("climate.000a1a49a11b83", "current_temperature") < states('input_number.climate_kamil_room_standby_low') | float
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_visitors_room", "heat") 
+#             and 
+#             state_attr("climate.000a18a9a2fc6d", "current_temperature") < states('input_number.climate_visitors_room_heat_low') | float 
+#           )
+#           or
+#           (
+#             is_state("sensor.heating_mode_visitors_room", "standby") 
+#             and 
+#             state_attr("climate.000a18a9a2fc6d", "current_temperature") < states('input_number.climate_visitors_room_standby_low') | float
+#           )
+#         %}
+#           on
+#         {% elif 
+#           (
+#             is_state("sensor.heating_mode_office", "heat") 
+#             and 
+#             state_attr("climate.gabinet", "current_temperature") > states('input_number.climate_office_heat_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_office", "standby") 
+#             and 
+#             state_attr("climate.gabinet", "current_temperature") > states('input_number.climate_office_standby_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_livingroom", "heat") 
+#             and 
+#             state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_heat_high') | float 
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_livingroom", "standby") 
+#             and 
+#             state_attr("climate.salon_anka", "current_temperature") > states('input_number.climate_livingroom_standby_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_gameroom", "heat") 
+#             and 
+#             state_attr("climate.int0000003", "current_temperature") > states('input_number.climate_gameroom_heat_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_gameroom", "standby") 
+#             and 
+#             state_attr("climate.int0000003", "current_temperature") > states('input_number.climate_gameroom_standby_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_bedroom", "heat") 
+#             and 
+#             state_attr("climate.000a1a49a1145f", "current_temperature") > states('input_number.climate_bedroom_heat_high') | float 
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_bedroom", "standby") 
+#             and 
+#             state_attr("climate.000a1a49a1145f", "current_temperature") > states('input_number.climate_bedroom_standby_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_kamil_room", "heat") 
+#             and 
+#             state_attr("climate.000a1a49a11b83", "current_temperature") > states('input_number.climate_kamil_room_heat_high') | float 
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_kamil_room", "standby") 
+#             and 
+#             state_attr("climate.000a1a49a11b83", "current_temperature") > states('input_number.climate_kamil_room_standby_high') | float
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_visitors_room", "heat") 
+#             and 
+#             state_attr("climate.000a18a9a2fc6d", "current_temperature") > states('input_number.climate_visitors_room_heat_high') | float 
+#           )
+#           and
+#           (
+#             is_state("sensor.heating_mode_visitors_room", "standby") 
+#             and 
+#             state_attr("climate.000a18a9a2fc6d", "current_temperature") > states('input_number.climate_visitors_room_standby_high') | float
+#           )
+#         %}
+#           off
+#         {% else %}
+#           on
+#         {% endif %}
