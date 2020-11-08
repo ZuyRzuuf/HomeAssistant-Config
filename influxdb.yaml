@@ -1,0 +1,17 @@
+host: 192.168.1.72
+include:
+  entities:
+    - sensor.solaredge_current_power
+    - sensor.solaredge_energy_today
+    - sensor.solaredge_energy_this_month
+    - sensor.solaredge_energy_this_year
+    # temperature
+    - sensor.0x000d6ffffe6ece5b_temperature # outdoor west
+    - sensor.temperature_office             # office
+    - sensor.0x000d6ffffe65b8da_temperature # livingroom
+    - sensor.0x000d6ffffe6eca55_temperature # gameroom
+    - sensor.temperature_bedroom            # bedrooom
+    - sensor.temperature_kamil_room         # kamil room
+    - sensor.temperature_visitors_room      # visitors room
+    - sensor.0x086bd7fffef07ec0_temperature # upper bathroom
+    
