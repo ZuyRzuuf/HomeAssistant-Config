@@ -12,3 +12,22 @@ resources:
     # https://github.com/kalkih/mini-graph-card
 #  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
 #    type: module
+dashboards:
+  lovelace-admin:
+    mode: yaml
+    filename: ui-lovelace-admin.yaml
+    title: Admin view
+    icon: "mdi:lock"
+    require_admin: true
+  lovelace-desktop:
+    mode: yaml
+    filename: ui-lovelace-desktop.yaml
+    title: Widok desktop
+    icon: mdi:desktop-classic
+    require_admin: false
+  lovelace-climate:
+    mode: yaml
+    filename: ui-lovelace-climate.yaml
+    title: Ogrzewanie
+    icon: mdi:radiator
+    require_admin: false
