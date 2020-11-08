@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Kamil Room Window"
+  state_topic: "RF_Bridge/tele/RESULT"
+  value_template: "{{value_json.RfReceived.Data}}"
+  payload_on: "B15D0A"
+  payload_off: "B15D0E"
+  device_class: door
