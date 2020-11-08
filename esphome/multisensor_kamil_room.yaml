@@ -1,0 +1,38 @@
+esphome:
+  name: multisensor_kamil_room
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Multisensor Kamil Room"
+    password: "s1qkgkYhQkPO"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+i2c:
+
+sensor:
+  - platform: dht
+    pin: D7
+    temperature:
+      name: "Multisensor Temperature"
+    humidity:
+      name: "Multisensor Humidity"
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    address: 0x23
+    measurement_time: 69
+    update_interval: 60s

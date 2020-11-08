@@ -1,0 +1,80 @@
+esphome:
+  name: multisensor_attic
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Multisensor Attic"
+    password: "Pl1FeaDiYASY"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Enable Web server.
+web_server:
+  port: 80
+
+  # Sync time with Home Assistant.
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information.
+text_sensor:
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: "Multisensor Attic ESPHome Version"
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: "Multisensor Attic IP"
+    ssid:
+      name: "Multisensor Attic SSID"
+    bssid:
+      name: "Multisensor Attic BSSID"
+
+# Exposed switches.
+# Switch to restart the multisensor_attic.   
+switch:
+  - platform: restart
+    name: "Multisensor Attic Restart"
+
+i2c:
+
+sensor:
+  # Uptime sensor.
+  - platform: uptime
+    name: "Multisensor Attic Uptime"
+
+  # WiFi Signal sensor.
+  - platform: wifi_signal
+    name: "Multisensor Attic WiFi Signal"
+    update_interval: 60s
+
+  # Temperature & Humidity DHT11
+  - platform: dht
+    pin: D7
+    model: dht11
+    temperature:
+      name: "Multisensor Attic Temperature"
+    humidity:
+      name: "Multisensor Attic  Humidity"
+    update_interval: 30s
+  # Luminance BH1750
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    address: 0x23
+    measurement_time: 69
+    update_interval: 60s

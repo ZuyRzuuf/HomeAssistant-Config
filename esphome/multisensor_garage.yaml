@@ -1,0 +1,101 @@
+esphome:
+  name: multisensor_garage
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Multisensor Garage"
+    password: "qm8TG5PBr4CN"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Enable Web server.
+web_server:
+  port: 80
+
+  # Sync time with Home Assistant.
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information.
+text_sensor:
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: "Multisensor Garage ESPHome Version"
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: "Multisensor Garage IP"
+    ssid:
+      name: "Multisensor Garage SSID"
+    bssid:
+      name: "Multisensor Garage BSSID"
+
+# Exposed switches.
+# Switch to restart the multisensor_attic.   
+switch:
+  - platform: restart
+    name: "Multisensor Garage Restart"
+
+i2c:
+
+sensor:
+  # Uptime sensor.
+  - platform: uptime
+    name: "Multisensor Garage Uptime"
+
+  # WiFi Signal sensor.
+  - platform: wifi_signal
+    name: "Multisensor Garage WiFi Signal"
+    update_interval: 60s
+
+  # Temperature & Humidity DHT11
+  - platform: dht
+    pin: D7
+    model: dht11
+    temperature:
+      name: "Multisensor Garage Temperature"
+    humidity:
+      name: "Multisensor Garage  Humidity"
+    update_interval: 60s
+
+  # Luminance BH1750
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    address: 0x23
+    measurement_time: 69
+    update_interval: 60s
+
+  # Distance HC-SR04
+  - platform: ultrasonic
+    trigger_pin: D6
+    echo_pin: D5
+    name: "Garage gate opened in percent"
+    update_interval: 60s
+    # filters:
+    # - lambda: return (2.34-x)*(100/2.34);
+    # unit_of_measurement: "%"
+    unit_of_measurement: "cm"
+    
+  - platform: ultrasonic
+    trigger_pin: D6
+    echo_pin: D5
+    name: "Garage gate opened in cm"
+    update_interval: 5s
+    # filters:
+    # - lambda: return (2.34-x)*100;
+    unit_of_measurement: "cm"
