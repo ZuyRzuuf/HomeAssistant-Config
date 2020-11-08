@@ -5,9 +5,39 @@ badges: []
 cards:
   - type: vertical-stack
     cards:
-      - type: entities
+      - type: glance
         entities:
-          - entity: binary_sensor.home_temperature
+          - entity: input_boolean.heating_season
+            name: sezon grzewczy
+            show_state: false
+            tap_action:
+              action: more-info
+          - entity: switch.tasmota_tasmota
+            name: piec gazowy
+            icon: "mdi:radiator"
+            show_state: false
+            tap_action:
+              action: more-info
+          - entity: switch.upper_bathroom_radiator_switch
+            name: górna łazienka
+            icon: "mdi:radiator"
+            show_state: false
+            tap_action:
+              action: more-info
+  - type: vertical-stack
+    cards:
+      - type: glance
+        entities:
+          - entity: input_boolean.gas_stove_manual_mode
+            name: piec w trybie manualnym
+            show_state: false
+            tap_action:
+              action: toggle
+          - entity: switch.tasmota_tasmota
+            name: włącznik pieca
+            show_state: false
+            tap_action:
+              action: toggle
   - type: vertical-stack
     cards:
       - type: entities

@@ -40,6 +40,13 @@ cards:
           card: !include ../common_ui_elements/tile_style.yaml
   - type: horizontal-stack
     cards:
+      - type: gauge
+        entity: sensor.saltlevel_in_percent
+      - type: history-graph
+        entities: 
+          - sensor.saltlevel_in_percent
+  - type: horizontal-stack
+    cards:
       - type: custom:button-card
         name: pompa
         entity: switch.water_pump_switch
