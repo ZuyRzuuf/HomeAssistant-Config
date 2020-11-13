@@ -37,7 +37,7 @@
               dinner
             {% elif '20:30' <= current_time < '22:00' %}
               relax
-            {% elif '22:00' <= current_time < '23:00' %}
+            {% elif '22:00' <= current_time < '23:30' %}
               bedtime
             {% else %}
               sleep
@@ -54,9 +54,9 @@
               housework
             {% elif '20:00' <= current_time < '20:30' %}
               dinner
-            {% elif '20:30' <= current_time < '23:00' %}
+            {% elif '20:30' <= current_time < '22:30' %}
               relax
-            {% elif '23:00' <= current_time < '00:00' %}
+            {% elif '22:30' <= current_time < '00:00' %}
               bedtime
             {% else %}
               sleep

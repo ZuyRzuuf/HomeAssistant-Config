@@ -7,7 +7,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.gabinet
-      temperature: "{{ states('input_number.climate_office_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_office_heat_high') | float }}"
 
 - alias: Set Temperature for Standby in Office
   trigger:
@@ -18,7 +18,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.gabinet
-      temperature: "{{ states('input_number.climate_office_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_office_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Office
   trigger:
@@ -40,7 +40,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000001
-      temperature: "{{ states('input_number.climate_livingroom_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_livingroom_heat_high') | float }}"
 
 - alias: Set Temperature for Standby in Livingroom
   trigger:
@@ -51,7 +51,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000001
-      temperature: "{{ states('input_number.climate_livingroom_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_livingroom_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Livingroom
   trigger:
@@ -73,7 +73,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: "{{ states('input_number.climate_gameroom_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_gameroom_heat_high') | float }}"
 
 - alias: Set Temperature for Standby in Gameroom
   trigger:
@@ -84,7 +84,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.int0000003
-      temperature: "{{ states('input_number.climate_gameroom_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_gameroom_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Gameroom
   trigger:
@@ -106,7 +106,18 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a1145f
-      temperature: "{{ states('input_number.climate_bedroom_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_bedroom_heat_high') | float }}"
+
+- alias: Set Temperature for Comfort in Bedroom
+  trigger:
+    platform: state
+    entity_id: sensor.heating_mode_bedroom
+    to: "comfort"
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.000a1a49a1145f
+      temperature: "{{ states('input_number.climate_bedroom_comfort_high') | float }}"
 
 - alias: Set Temperature for Standby in Bedroom
   trigger:
@@ -117,7 +128,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a1145f
-      temperature: "{{ states('input_number.climate_bedroom_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_bedroom_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Bedroom
   trigger:
@@ -139,7 +150,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a11b83
-      temperature: "{{ states('input_number.climate_kamil_room_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_kamil_room_heat_high') | float }}"
 
 - alias: Set Temperature for Standby in Kamil Room
   trigger:
@@ -150,7 +161,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a1a49a11b83
-      temperature: "{{ states('input_number.climate_kamil_room_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_kamil_room_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Kamil Room
   trigger:
@@ -172,7 +183,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a18a9a2fc6d
-      temperature: "{{ states('input_number.climate_visitors_room_heat_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_visitors_room_heat_high') | float }}"
 
 - alias: Set Temperature for Standby in Visitors Room
   trigger:
@@ -183,7 +194,7 @@
     service: climate.set_temperature
     data:
       entity_id: climate.000a18a9a2fc6d
-      temperature: "{{ states('input_number.climate_visitors_room_standby_comfort') | float }}"
+      temperature: "{{ states('input_number.climate_visitors_room_standby_high') | float }}"
 
 - alias: Set Temperature for Off in Visitors Room
   trigger:

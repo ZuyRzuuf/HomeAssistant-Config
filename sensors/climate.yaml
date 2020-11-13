@@ -148,11 +148,15 @@
                 is_state('sensor.home_lifecycle', 'awake') 
                 or
                 is_state('sensor.home_lifecycle', 'bedtime') 
-                or
-                is_state('sensor.home_lifecycle', 'sleep') 
             )
           %}
             heat
+          {% elif 
+            (
+                is_state('sensor.home_lifecycle', 'sleep') 
+            )
+          %}
+            comfort
           {% else %}
             standby
           {% endif %}
