@@ -9,7 +9,7 @@ automation: !include_dir_merge_list automations/
 script: !include_dir_named scripts/
 scene: !include scenes.yaml
 
-#light: !include_dir_merge_list lights/
+light: !include_dir_merge_list lights/
 
 lovelace: !include lovelace.yaml
 
@@ -18,6 +18,8 @@ recorder: !include recorder.yaml
 homematic: !include homematic.yaml
 
 influxdb: !include influxdb.yaml
+
+shelly: !include shelly.yaml
 
 # apcupsd: !include apcupsd.yaml
 
