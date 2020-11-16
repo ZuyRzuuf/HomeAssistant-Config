@@ -1,0 +1,364 @@
+
+# - cal_id: p#weather@group.v.calendar.google.com
+#   entities:
+#   - device_id: pogoda
+#     ignore_availability: true
+#     name: Pogoda
+#     track: false
+
+# - cal_id: ltco9m68hicmc1kc7vdjormi6c@group.calendar.google.com
+#   entities:
+#   - device_id: imprezy
+#     ignore_availability: true
+#     name: Imprezy
+#     track: false
+
+# - cal_id: 669s8s62iurkq0il727uigm1c4@group.calendar.google.com
+#   entities:
+#   - device_id: a_k
+#     ignore_availability: true
+#     name: A&K
+#     track: false
+
+# - cal_id: 3vt5rjilodektb4sat22bbdmvo@group.calendar.google.com
+#   entities:
+#   - device_id: jedzenie
+#     ignore_availability: true
+#     name: Jedzenie
+#     track: false
+
+# - cal_id: 7j3rr600ie9oq84282gitg2a3c@group.calendar.google.com
+#   entities:
+#   - device_id: zadania
+#     ignore_availability: true
+#     name: Zadania
+#     track: false
+
+# - cal_id: b8njmvvi0g5dfkn1kgh2thujt8@group.calendar.google.com
+#   entities:
+#   - device_id: sloobniak
+#     ignore_availability: true
+#     name: "\u015Aloobniak"
+#     track: false
+
+# - cal_id: c5n23rst8v7uh23etqk6sdc6cc@group.calendar.google.com
+#   entities:
+#   - device_id: dodatkowe_swieta_i_wydarzenia_w_polsce
+#     ignore_availability: true
+#     name: "Dodatkowe \u015Bwi\u0119ta i wydarzenia w Polsce"
+#     track: false
+
+# - cal_id: og4c1qpacrljepenhf531as3f8@group.calendar.google.com
+#   entities:
+#   - device_id: podroze
+#     ignore_availability: true
+#     name: "Podr\xF3\u017Ce"
+#     track: false
+
+# - cal_id: toqrg7lhgbsgloipnr0v974th8@group.calendar.google.com
+#   entities:
+#   - device_id: motocykl
+#     ignore_availability: true
+#     name: Motocykl
+#     track: false
+
+# - cal_id: 1m3c6b8hsfpce0bgu531oj65v0@group.calendar.google.com
+#   entities:
+#   - device_id: platnosci
+#     ignore_availability: true
+#     name: "P\u0142atno\u015Bci"
+#     track: false
+
+# - cal_id: mt2u3asar41m2r4rjptk7et7m0@group.calendar.google.com
+#   entities:
+#   - device_id: medycyna
+#     ignore_availability: true
+#     name: Medycyna
+#     track: false
+
+# - cal_id: xathloc@gmail.com
+#   entities:
+#   - device_id: krzysztof_sobieraj
+#     ignore_availability: true
+#     name: Krzysztof Sobieraj
+#     track: false
+
+# - cal_id: addressbook#contacts@group.v.calendar.google.com
+#   entities:
+#   - device_id: urodziny
+#     ignore_availability: true
+#     name: Urodziny
+#     track: false
+
+# - cal_id: pl.polish#holiday@group.v.calendar.google.com
+#   entities:
+#   - device_id: swieta_w_polsce
+#     ignore_availability: true
+#     name: "\u015Awi\u0119ta w Polsce"
+#     track: false
+
+# - cal_id: 6us5202hnr8o1h8lafk4regm4s@group.calendar.google.com
+#   entities:
+#   - device_id: wydarzenia
+#     ignore_availability: true
+#     name: WYDARZENIA
+#     track: false
+
+# - cal_id: sv8jcnj5hfur9qtvp0n731f5as@group.calendar.google.com
+#   entities:
+#   - device_id: rocznice
+#     ignore_availability: true
+#     name: ROCZNICE
+#     track: false
+
+- cal_id: migorotq82fn3uuschv6as4f6c@group.calendar.google.com
+  entities:
+  - device_id: calendar_dom
+    ignore_availability: true
+    name: Dom
+    track: true
+
+- cal_id: p#weather@group.v.calendar.google.com
+  entities:
+  - device_id: pogoda
+    ignore_availability: true
+    name: Pogoda
+    track: false
+
+- cal_id: 9jr9m0grr9dr9f0sfgejiv7vljnrrtls@import.calendar.google.com
+  entities:
+  - device_id: six_nations
+    ignore_availability: true
+    name: Six Nations
+    track: false
+
+- cal_id: geiuaer6vbu0t0jn5n0ghnk09eve6597@import.calendar.google.com
+  entities:
+  - device_id: https_www_sixnationsrugby_com_tools_calendars_sixnations_fixtures_6n_all_ics
+    ignore_availability: true
+    name: https://www.sixnationsrugby.com/tools/calendars/sixnations-fixtures-6n-all.ics
+    track: false
+
+- cal_id: ltco9m68hicmc1kc7vdjormi6c@group.calendar.google.com
+  entities:
+  - device_id: imprezy
+    ignore_availability: true
+    name: Imprezy
+    track: false
+
+- cal_id: 84rhhqvg9igucahpmpeclt2djo@group.calendar.google.com
+  entities:
+  - device_id: sport
+    ignore_availability: true
+    name: Sport
+    track: false
+
+- cal_id: om96gbqhre1eclnkfoort71qh4@group.calendar.google.com
+  entities:
+  - device_id: fotokalendarz_sport_forum_nikon_org_pl
+    ignore_availability: true
+    name: Fotokalendarz - sport @ forum.nikon.org.pl
+    track: false
+
+- cal_id: 1gcs8mtl4uafn74osktlfgn6eg7amjru@import.calendar.google.com
+  entities:
+  - device_id: champions_league
+    ignore_availability: true
+    name: Champions League
+    track: false
+
+- cal_id: 669s8s62iurkq0il727uigm1c4@group.calendar.google.com
+  entities:
+  - device_id: a_k
+    ignore_availability: true
+    name: A&K
+    track: false
+
+- cal_id: 3vt5rjilodektb4sat22bbdmvo@group.calendar.google.com
+  entities:
+  - device_id: jedzenie
+    ignore_availability: true
+    name: Jedzenie
+    track: false
+
+- cal_id: 00u29gnctj7r2lrfhe3dlkuoqs@group.calendar.google.com
+  entities:
+  - device_id: sportradar
+    ignore_availability: true
+    name: Sportradar
+    track: false
+
+- cal_id: hle4i0bdgkbc0pfugut2jnb5k6dkfrbe@import.calendar.google.com
+  entities:
+  - device_id: europa_league
+    ignore_availability: true
+    name: Europa League
+    track: false
+
+- cal_id: ge892jfsjkmngmuep5ajtm9ob0@group.calendar.google.com
+  entities:
+  - device_id: telefon
+    ignore_availability: true
+    name: Telefon
+    track: false
+
+- cal_id: 7j3rr600ie9oq84282gitg2a3c@group.calendar.google.com
+  entities:
+  - device_id: zadania
+    ignore_availability: true
+    name: Zadania
+    track: false
+
+- cal_id: ongkmk6lnlc94o1f1o53j7uddek3i9dh@import.calendar.google.com
+  entities:
+  - device_id: premier_league
+    ignore_availability: true
+    name: Premier League
+    track: false
+
+- cal_id: c5n23rst8v7uh23etqk6sdc6cc@group.calendar.google.com
+  entities:
+  - device_id: dodatkowe_swieta_i_wydarzenia_w_polsce
+    ignore_availability: true
+    name: "Dodatkowe \u015Bwi\u0119ta i wydarzenia w Polsce"
+    track: false
+
+- cal_id: b8njmvvi0g5dfkn1kgh2thujt8@group.calendar.google.com
+  entities:
+  - device_id: sloobniak
+    ignore_availability: true
+    name: "\u015Aloobniak"
+    track: false
+
+- cal_id: og4c1qpacrljepenhf531as3f8@group.calendar.google.com
+  entities:
+  - device_id: podroze
+    ignore_availability: true
+    name: "Podr\xF3\u017Ce"
+    track: false
+
+- cal_id: domanager.app@gmail.com
+  entities:
+  - device_id: domanager
+    ignore_availability: true
+    name: DOManager
+    track: false
+
+- cal_id: 71f1e56j3f28t59t7pa4j65hc8@group.calendar.google.com
+  entities:
+  - device_id: jetjournal_airshow_kalender
+    ignore_availability: true
+    name: JetJournal Airshow Kalender
+    track: false
+
+- cal_id: toqrg7lhgbsgloipnr0v974th8@group.calendar.google.com
+  entities:
+  - device_id: motocykl
+    ignore_availability: true
+    name: Motocykl
+    track: false
+
+- cal_id: 1m3c6b8hsfpce0bgu531oj65v0@group.calendar.google.com
+  entities:
+  - device_id: platnosci
+    ignore_availability: true
+    name: "P\u0142atno\u015Bci"
+    track: false
+
+- cal_id: mt2u3asar41m2r4rjptk7et7m0@group.calendar.google.com
+  entities:
+  - device_id: medycyna
+    ignore_availability: true
+    name: Medycyna
+    track: false
+
+- cal_id: xathloc@gmail.com
+  entities:
+  - device_id: krzysztof_sobieraj
+    ignore_availability: true
+    name: Krzysztof Sobieraj
+    track: false
+
+- cal_id: addressbook#contacts@group.v.calendar.google.com
+  entities:
+  - device_id: urodziny
+    ignore_availability: true
+    name: Urodziny
+    track: false
+
+- cal_id: pl.polish#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: swieta_w_polsce
+    ignore_availability: true
+    name: "\u015Awi\u0119ta w Polsce"
+    track: false
+
+- cal_id: gc6lo6ik471o68n69tjvtifse4@group.calendar.google.com
+  entities:
+  - device_id: webdev
+    ignore_availability: true
+    name: WebDev
+    track: false
+
+- cal_id: ftejq4ivql9n956d126s7hqlsc@group.calendar.google.com
+  entities:
+  - device_id: xathloc_pdtv
+    ignore_availability: true
+    name: Xathloc - PDTV
+    track: false
+
+- cal_id: 6us5202hnr8o1h8lafk4regm4s@group.calendar.google.com
+  entities:
+  - device_id: wydarzenia
+    ignore_availability: true
+    name: WYDARZENIA
+    track: false
+
+- cal_id: sv8jcnj5hfur9qtvp0n731f5as@group.calendar.google.com
+  entities:
+  - device_id: rocznice
+    ignore_availability: true
+    name: ROCZNICE
+    track: false
+
+- cal_id: pdismqi2g48m6ta80d2touhmv0@group.calendar.google.com
+  entities:
+  - device_id: appcoders
+    ignore_availability: true
+    name: AppCoders
+    track: false
+
+- cal_id: bbgcvuvno52dev2fcogbe94e0k@group.calendar.google.com
+  entities:
+  - device_id: my_workspace_pdtv
+    ignore_availability: true
+    name: My Workspace - PDTV
+    track: false
+
+- cal_id: voeb4e13n53m3lcho4ievp6pb26djqbl@import.calendar.google.com
+  entities:
+  - device_id: https_swgohevents_com_ical
+    ignore_availability: true
+    name: https://swgohevents.com/ical
+    track: false
+
+- cal_id: m1cc4c3ge9e42u4o1g1lonadsjjtc53r@import.calendar.google.com
+  entities:
+  - device_id: primera_division
+    ignore_availability: true
+    name: Primera Division
+    track: false
+
+- cal_id: apollographql.com_sk7pski2b6hupsf3l03pi0qqg4@group.calendar.google.com
+  entities:
+  - device_id: apollo_graphql_events
+    ignore_availability: true
+    name: Apollo GraphQL Events
+    track: false
+
+- cal_id: 8g4uumj8j1j6s9dgiebideu9vuacuh09@import.calendar.google.com
+  entities:
+  - device_id: serie_a
+    ignore_availability: true
+    name: Serie A
+    track: false
