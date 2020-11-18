@@ -1,4 +1,4 @@
 - platform: ping
   hosts:
-    samsung_a10: 192.168.1.74
+    redmi_note_9_pro: 192.168.1.152
     mi_10: 192.168.1.78

@@ -13,5 +13,5 @@
       friendly_name: Is Anetka Home
       value_template: >-
         {{
-          is_state('device_tracker.samsung_a10', 'home')
+          is_state('device_tracker.redmi_note_9_pro', 'home')
         }}
