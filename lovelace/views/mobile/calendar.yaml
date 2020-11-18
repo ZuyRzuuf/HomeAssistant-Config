@@ -1,0 +1,15 @@
+title: Plan dnia
+path: calendar
+icon: "mdi:calendar"
+badges: []
+cards:
+  - type: "custom:atomic-calendar-revive"
+    showMonth: true
+    showWeekDay: true
+    showDate: true
+    language: pl
+    fullDayEventText: "cały dzień"
+    entities:
+      - entity: calendar.calendar_dom
+        icon: "mdi:home"
+        color: green
