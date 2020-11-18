@@ -1,2 +1,4 @@
 name: Windows at Risk of Rain
 entities:
+  # pokój Kamila, okno lewe
+  - binary_sensor.kamil_room_window

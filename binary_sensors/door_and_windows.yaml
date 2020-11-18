@@ -1,3 +1,27 @@
+- platform: template
+  sensors:
+    is_any_door_or_window_open:
+      friendly_name: Is Any Door Or Window Open
+      value_template: "{{is_state('group.doors_and_windows', 'on')}}"
+      icon_template: >
+        {% if is_state('group.doors_and_windows', 'on') %}
+          mdi:door-open
+        {% else %}
+          mdi:door-closed
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_any_window_at_risk_of_rain_open:
+      friendly_name: Is Any Window At Risk of Rain Open
+      value_template: "{{is_state('group.windows_at_risk_of_rain', 'on')}}"
+      icon_template: >
+        {% if is_state('group.windows_at_risk_of_rain', 'on') %}
+          mdi:window-open-variant
+        {% else %}
+          mdi:window-closed-variant
+        {% endif %}
+
 - platform: mqtt
   name: "Kamil Room Window"
   state_topic: "RF_Bridge/tele/RESULT"
