@@ -1,0 +1,16 @@
+- type: custom:button-card
+  name: " "
+  icon: "mdi:home"
+  color: "#0099ff"
+  show_icon: true
+  show_name: false
+  show_state: true
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/main
+  icon_height: 48px
+  styles:
+    card:
+      - font-size: 0.7em
+      - height: 40px
+      - width: 60px
