@@ -334,6 +334,8 @@
           {{ states("input_number.climate_bedroom_heat_low") }}
         {% elif is_state("sensor.heating_mode_bedroom", "standby") %}
           {{ states("input_number.climate_bedroom_standby_low") }}
+        {% elif is_state("sensor.heating_mode_bedroom", "comfort") %}
+          {{ states("input_number.climate_bedroom_comfort_low") }}
         {% else %}
           5
         {% endif %}
@@ -347,6 +349,8 @@
           {{ states("input_number.climate_bedroom_heat_high") }}
         {% elif is_state("sensor.heating_mode_bedroom", "standby") %}
           {{ states("input_number.climate_bedroom_standby_high") }}
+        {% elif is_state("sensor.heating_mode_bedroom", "comfort") %}
+          {{ states("input_number.climate_bedroom_comfort_high") }}
         {% else %}
           5
         {% endif %}
