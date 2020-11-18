@@ -1,5 +1,17 @@
 - platform: template
   sensors:
+    is_lower_bathroom_active:
+      friendly_name: Is Lower Bathroom Active
+      value_template: "{{is_state('group.room_lower_bathroom', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_lower_bathroom', 'on') %}
+          mdi:shower-head
+        {% else %}
+          mdi:shower-head
+        {% endif %}
+
+- platform: template
+  sensors:
     is_kitchen_active:
       friendly_name: Is Kitchen Active
       value_template: >-
@@ -49,6 +61,18 @@
 
 - platform: template
   sensors:
+    is_bedroom_active:
+      friendly_name: Is Bedroom Active
+      value_template: "{{is_state('group.room_bedroom', 'on')}}"
+      icon_template: >
+        {% if is_state('group.room_bedroom', 'on') %}
+          mdi:bed-double
+        {% else %}
+          mdi:bed-double
+        {% endif %}
+
+- platform: template
+  sensors:
     is_gameroom_active:
       friendly_name: Is Gameroom Active
       value_template: "{{is_state('group.room_gameroom', 'on')}}"
@@ -81,6 +105,18 @@
           mdi:hat-fedora
         {% else %}
           mdi:hat-fedora
+        {% endif %}
+
+- platform: template
+  sensors:
+    is_garage_active:
+      friendly_name: Is Garage Active
+      value_template: "{{is_state('group.garage', 'on')}}"
+      icon_template: >
+        {% if is_state('group.garage', 'on') %}
+          mdi:garage-open
+        {% else %}
+          mdi:garage
         {% endif %}
 
 - platform: template
