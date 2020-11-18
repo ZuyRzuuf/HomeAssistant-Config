@@ -1,0 +1,232 @@
+panel: false
+title: Główna
+path: main
+icon: "mdi:home"
+badges:
+  - entity: sensor.solaredge_energy_today
+  - entity: person.krzysiek
+  - entity: sun.sun
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: weather-forecast
+            entity: weather.tuwima
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.solaredge_current_power
+            name: Produkcja prądu
+            graph: line
+            detail: 2
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_any_door_or_window_open
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/doors-and-windows
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_any_window_at_risk_of_rain_open
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/doors-and-windows
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_kitchen_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_livingroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/living-room
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_office_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/office
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_lower_bathroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/lower-bathroom
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_gameroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/gameroom
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_bedroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/bedroom
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_upper_bathroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/upper-bathroom
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_visitors_room_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/visitors-room
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_boiler_house_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/boiler-house
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_garage_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/garage
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_attic_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/attic
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            entity: binary_sensor.is_outdoor_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/outdoor
+            hold_action:
+              action: more-info
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml

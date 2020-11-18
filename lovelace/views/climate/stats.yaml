@@ -1,0 +1,17 @@
+title: Statystyki
+path: stats
+icon: "mdi:chart-line"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: history-graph
+        entities:
+          - entity: climate.salon_anka
+        hours_to_show: 24
+        refresh_interval: 0
+      - type: history-graph
+        entities:
+          - entity: climate.gabinet
+        hours_to_show: 24
+        refresh_interval: 0

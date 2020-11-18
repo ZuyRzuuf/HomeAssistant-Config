@@ -1,0 +1,143 @@
+title: Ustawienia temperatury
+path: settings
+icon: "mdi:cog-outline"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: glance
+        title: "gabinet"
+        columns: 6
+        entities:
+          - entity: input_number.climate_office_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_office_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "salon"
+        columns: 6
+        entities:
+          - entity: input_number.climate_livingroom_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_livingroom_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "gameroom"
+        columns: 6
+        entities:
+          - entity: input_number.climate_gameroom_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_comfort_low
+            name: C low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_comfort_high
+            name: C high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_gameroom_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "sypialnia"
+        columns: 6
+        entities:
+          - entity: input_number.climate_bedroom_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_comfort_low
+            name: C low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_comfort_high
+            name: C high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_bedroom_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "pokój Kamila"
+        columns: 6
+        entities:
+          - entity: input_number.climate_kamil_room_heat_low
+            name: H low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_heat_high
+            name: H high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_comfort_low
+            name: C low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_comfort_high
+            name: C high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_kamil_room_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "pokój gościnny"
+        columns: 6
+        entities:
+          - entity: input_number.climate_visitors_room_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_comfort_low
+            name: C low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_comfort_high
+            name: C high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_visitors_room_standby_high
+            name: S high
+            icon: "mdi:thermometer"
+      - type: glance
+        title: "górna łazienka"
+        columns: 6
+        entities:
+          - entity: input_number.climate_upper_bathroom_heat_low
+            name: G low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_heat_high
+            name: G high
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_standby_low
+            name: S low
+            icon: "mdi:thermometer"
+          - entity: input_number.climate_upper_bathroom_standby_high
+            name: S high
+            icon: "mdi:thermometer"

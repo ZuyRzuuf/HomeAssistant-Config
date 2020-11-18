@@ -1,0 +1,87 @@
+title: Górna łazienka
+path: upper-bathroom
+icon: "mdi:shower"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            name: temperatura
+            entity: sensor.0x086bd7fffef07ec0_temperature
+          - type: sensor
+            name: wilgotność
+            entity: sensor.0x086bd7fffef07ec0_humidity
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.0xec1bbdfffe45234b_occupancy
+            name: " "
+            tap_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: " "
+            entity: switch.0xbc33acfffe5eca75_switch
+            icon: "mdi:track-light"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            name: " "
+            entity: switch.upper_bathroom_radiator_switch
+            icon: "mdi:radiator"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style.yaml
+          - type: custom:button-card
+            name: " "
+            entity: switch.0xbc33acfffe4c4ee3_switch
+            icon: "mdi:fan"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style.yaml
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: entities
+                title: "suszenie ręcznika"
+                icon: "mdi:radiator"
+                state_color: true
+                show_header_toggle: false
+                entities:
+                  - entity: input_number.upper_bathroom_radiator_off_delay
+                    name: "czas pracy grzejnika"
+                  - entity: script.upper_bathroom_dry_towel
+                    name: " "
+                    icon: "mdi:blank"

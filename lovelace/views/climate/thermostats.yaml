@@ -1,0 +1,18 @@
+title: Termostaty
+path: thermostats
+icon: "mdi:home-thermometer-outline"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.int0000001
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: climate.salon_anka
+            hours_to_show: 24
+            refresh_interval: 0

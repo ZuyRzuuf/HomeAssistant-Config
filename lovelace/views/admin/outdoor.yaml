@@ -42,7 +42,7 @@ cards:
             icon_height: 64px
             styles:
               card:
-                !include ../common_ui_elements/tile_style.yaml
+                !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             name: bok
             entity: switch.0x60a423fffe9770a3_switch_left
@@ -57,7 +57,7 @@ cards:
             icon_height: 64px
             styles:
               card:
-                !include ../common_ui_elements/tile_style.yaml
+                !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             name: tył
             entity: switch.0x842e14fffedfbfb3_switch_left
@@ -72,4 +72,4 @@ cards:
             icon_height: 64px
             styles:
               card:
-                !include ../common_ui_elements/tile_style.yaml
+                !include ../../common_ui_elements/tile_style.yaml

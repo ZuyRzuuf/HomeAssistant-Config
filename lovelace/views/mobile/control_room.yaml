@@ -1,0 +1,55 @@
+title: Sterownia
+path: control-room
+icon: "mdi:cog-outline"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: tryby
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.is_home_office_mode
+            name: home office
+          - entity: input_boolean.is_day_off_mode
+            name: dzień wolny
+          - entity: input_boolean.is_party_mode
+            name: impreza
+          - entity: input_boolean.is_guest_mode
+            name: gościnny
+          - entity: input_boolean.is_holiday_mode
+            name: wakacyjny
+          - entity: input_boolean.heating_season
+            name: ogrzewanie
+      - type: entities
+        title: stan pokoi
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.is_bedroom_occupied
+            name: sypialnia
+          - entity: input_boolean.is_kamil_room_occupied
+            name: pokój Kamila
+          - entity: input_boolean.is_visitors_room_occupied
+            name: pokój gościnny
+          - entity: input_boolean.is_gameroom_occupied
+            name: gameroom
+      - type: entities
+        title: tryb ręczny
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: input_boolean.water_pump_manual_mode
+            name: pompa cyrkulacji
+          - entity: input_boolean.gas_stove_manual_mode
+            name: piec
+      - type: entities
+        title: status (podgląd)
+        show_header_toggle: false
+        state_color: true
+        entities:
+          - entity: binary_sensor.day_off_mode
+            name: weekend mode
+          - entity: binary_sensor.bedtime_mode
+            name: bedtime mode

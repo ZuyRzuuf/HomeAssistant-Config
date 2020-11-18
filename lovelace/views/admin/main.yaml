@@ -33,12 +33,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/kitchen
+              navigation_path: /lovelace-admin/kitchen
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_livingroom_active
             name: " "
@@ -47,12 +47,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/living-room
+              navigation_path: /lovelace-admin/living-room
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_office_active
             name: " "
@@ -61,12 +61,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/office
+              navigation_path: /lovelace-admin/office
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_boiler_house_active
             name: " "
@@ -75,12 +75,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/boiler-house
+              navigation_path: /lovelace-admin/boiler-house
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
   - type: vertical-stack
     cards:
       - type: horizontal-stack
@@ -93,12 +93,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/gameroom
+              navigation_path: /lovelace-admin/gameroom
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_upper_bathroom_active
             name: " "
@@ -107,12 +107,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/upper-bathroom
+              navigation_path: /lovelace-admin/upper-bathroom
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_visitors_room_active
             name: " "
@@ -121,12 +121,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/visitors-room
+              navigation_path: /lovelace-admin/visitors-room
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -137,12 +137,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/attic
+              navigation_path: /lovelace-admin/attic
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
           - type: custom:button-card
             entity: binary_sensor.is_outdoor_active
             name: " "
@@ -151,12 +151,12 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace/outdoor
+              navigation_path: /lovelace-admin/outdoor
             hold_action:
               action: more-info
             icon_height: 64px
             styles:
-              card: !include ../common_ui_elements/tile_style.yaml
+              card: !include ../../common_ui_elements/tile_style.yaml
   - type: vertical-stack
     cards:
       - type: vertical-stack
@@ -171,7 +171,7 @@ cards:
                 show_state: false
                 icon_height: 64px
                 styles:
-                  card: !include ../common_ui_elements/tile_style.yaml
+                  card: !include ../../common_ui_elements/tile_style.yaml
               - type: custom:button-card
                 entity: script.dry_upper_bathroom_after_bath
                 name: "dry bathroom"
@@ -180,4 +180,4 @@ cards:
                 show_state: false
                 icon_height: 64px
                 styles:
-                  card: !include ../common_ui_elements/tile_style.yaml
+                  card: !include ../../common_ui_elements/tile_style.yaml

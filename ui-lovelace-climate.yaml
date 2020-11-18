@@ -1,0 +1,6 @@
+title: Ogrzewanie
+views:
+  - !include lovelace/views/climate/temperature.yaml
+  - !include lovelace/views/climate/settings.yaml
+  - !include lovelace/views/climate/thermostats.yaml
+  - !include lovelace/views/climate/stats.yaml

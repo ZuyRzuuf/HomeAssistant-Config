@@ -1,0 +1,26 @@
+title: Drzwi i okna
+path: doors-and-windows
+icon: "mdi:door"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          !include ../../common_ui_elements/home_button.yaml
+  - type: entities
+    state_color: true
+    entities:
+      - type: section
+        label: kotłownia
+      - entity: binary_sensor.0xec1bbdfffe399fbd_contact
+        name: tylne drzwi
+      - type: section
+        label: strych
+      - entity: binary_sensor.0x14b457fffe157ca1_contact
+        name: klapa
+      - type: section
+        label: pokój Kamila
+      - entity: binary_sensor.kamil_room_window
+        name: okno lewe
+        icon: "mdi:window-closed-variant"

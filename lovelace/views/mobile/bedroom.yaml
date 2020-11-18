@@ -1,0 +1,18 @@
+title: Sypialnia
+path: bedroom
+icon: "mdi:bed-king"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.gabinet
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: climate.gabinet
+            hours_to_show: 24
+            refresh_interval: 0

@@ -1,0 +1,25 @@
+title: Salon
+path: living-room
+icon: "mdi:sofa"
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards: !include ../../common_ui_elements/home_button.yaml
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.0x842e14fffe57d350_light
+            name: Lewa Lampka TV
+            icon: "mdi:lamp"
+          - type: light
+            entity: light.0x842e14fffe57d107_light
+            name: Prawa Lampka TV
+            icon: "mdi:lamp"
+      - type: horizontal-stack
+        cards:
+          - type: media-control
+            entity: media_player.samsung_ue55f6700

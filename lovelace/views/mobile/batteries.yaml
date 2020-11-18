@@ -1,0 +1,50 @@
+title: Baterie
+path: batteries
+icon: "mdi:battery"
+badges: []
+cards:
+  - type: custom:battery-state-card
+    sort_by_level: asc
+    entities:
+      - entity: sensor.0x00158d000530908e_battery
+        name: włącznik lewej lampki TV
+      - entity: sensor.0x00158d0005724451_battery
+        name: włącznik prawej lampki TV
+      - entity: binary_sensor.salon_anka_low_bat
+        name: termostat w salonie (północ)
+      - entity: binary_sensor.salon_wykusz_lewy_low_bat
+        name: termostat w salonie (wykusz lewy)
+      - entity: binary_sensor.salon_wykusz_prawy_low_bat
+        name: termostat w salonie (wykusz prawy)
+      - entity: sensor.0x00158d0005724537_battery
+        name: włącznik lampki w gabinecie
+      - entity: binary_sensor.gabinet_low_bat
+        name: termostat w gabinecie
+      - entity: sensor.0x00158d0005317a91_battery
+        name: kotłownia korytarz główny
+      - entity: sensor.0xec1bbdfffee23cb0_battery
+        name: kotłownia korytarz
+      - entity: sensor.0xec1bbdfffe399fbd_battery
+        name: tylne drzwi
+      - entity: binary_sensor.000a1a49a132ef_low_bat
+        name: termostat w gameroom (front)
+      - entity: binary_sensor.000a18a9aa6392_low_bat
+        name: termostat w gameroom (tył)
+      - entity: binary_sensor.000a1a49a1145f_low_bat
+        name: termostat w sypialni
+      - entity: binary_sensor.000a1a49a11b83_low_bat
+        name: termostat w pokoju Kamila
+      - entity: binary_sensor.000a18a9a2fc6d_low_bat
+        name: termostat w pokoju gościnnym
+      - entity: sensor.0xec1bbdfffe7bc4e8_battery
+        name: czujnik ruchu w górnej łazience
+      - entity: sensor.0x086bd7fffef07ec0_battery
+        name: czujnik temperatury w górnej łazience
+      - entity: sensor.0xec1bbdfffe45234b_battery
+        name: włącznik oświetlenia zewnętrznego
+      - entity: sensor.0x00158d0004aaded3_battery
+        name: zewnętrzny czujnik temperatury (północ)
+      - entity: sensor.0x00158d0004aaded3_battery
+        name: zewnętrzny czujnik temperatury (zachód)
+      - entity: sensor.0x000d6ffffe6ece5b_battery
+        name: strych klapa
