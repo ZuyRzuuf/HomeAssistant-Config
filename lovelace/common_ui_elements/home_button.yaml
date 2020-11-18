@@ -1,7 +1,7 @@
 - type: custom:button-card
   name: " "
   icon: "mdi:home"
-  color: "#0099ff"
+  color: "#006699"
   show_icon: true
   show_name: false
   show_state: true
