@@ -3,13 +3,19 @@ path: calendar
 icon: "mdi:calendar"
 badges: []
 cards:
-  - type: "custom:atomic-calendar-revive"
-    showMonth: true
-    showWeekDay: true
-    showDate: true
-    language: pl
-    fullDayEventText: "cały dzień"
-    entities:
-      - entity: calendar.calendar_dom
-        icon: "mdi:home"
-        color: green
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards: !include ../../common_ui_elements/home_button.yaml
+  - type: vertical-stack
+    cards:
+    - type: "custom:atomic-calendar-revive"
+      showMonth: true
+      showWeekDay: true
+      showDate: true
+      language: pl
+      fullDayEventText: "cały dzień"
+      entities:
+        - entity: calendar.calendar_dom
+          icon: "mdi:home"
+          color: green
