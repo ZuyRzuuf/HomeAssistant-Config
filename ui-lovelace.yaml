@@ -4,6 +4,7 @@ views:
   - !include lovelace/views/mobile/kitchen.yaml
   - !include lovelace/views/mobile/living_room.yaml
   - !include lovelace/views/mobile/office.yaml
+  - !include lovelace/views/mobile/lower_bathroom.yaml
   - !include lovelace/views/mobile/boiler_house.yaml
   - !include lovelace/views/mobile/garage.yaml
   - !include lovelace/views/mobile/gameroom.yaml

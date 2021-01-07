@@ -78,7 +78,8 @@ cards:
                 name: low
               - entity: sensor.climate_bedroom_temp_high
                 name: high
-          - entity: sensor.0x000d6ffffe6eca55_temperature
+          # - entity: sensor.0x000d6ffffe6eca55_temperature
+          - entity: sensor.temperature_gameroom
             name: Gameroom
             icon: "mdi:thermometer"
             secondary_info: last-changed
@@ -114,7 +115,7 @@ cards:
                 name: low
               - entity: sensor.climate_visitors_room_temp_high
                 name: high
-          - entity: sensor.0x086bd7fffef07ec0_temperature
+          - entity: sensor.0xec1bbdfffe45291a_temperature
             name: Górna Łazienka
             icon: "mdi:thermometer"
             secondary_info: last-changed

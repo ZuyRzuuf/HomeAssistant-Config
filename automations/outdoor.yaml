@@ -4,7 +4,8 @@
     topic: zigbee2mqtt/Outdoor Lights Switch/action
     payload: 3_single
   action:
-    entity_id: switch.0x60a423fffe94f80c_switch_left
+    # entity_id: switch.0x60a423fffe94f80c_switch_left
+    entity_id: switch.outdoor_front_lights
     service: switch.toggle
   mode: single
 
@@ -14,7 +15,8 @@
     topic: zigbee2mqtt/Outdoor Lights Switch/action
     payload: 2_single
   action:
-    entity_id: switch.0x60a423fffe9770a3_switch_left
+    # entity_id: switch.0x60a423fffe9770a3_switch_left
+    entity_id: switch.outdoor_side_lights
     service: switch.toggle
   mode: single
 
@@ -24,6 +26,7 @@
     topic: zigbee2mqtt/Outdoor Lights Switch/action
     payload: 1_single
   action:
-    entity_id: switch.0x842e14fffedfbfb3_switch_left
+    # entity_id: switch.0x842e14fffedfbfb3_switch_left
+    entity_id: switch.outdoor_back_lights
     service: switch.toggle
   mode: single

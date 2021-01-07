@@ -6,8 +6,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: horizontal-stack
-        cards:
-          !include ../../common_ui_elements/home_button.yaml
+        cards: !include ../../common_ui_elements/home_button.yaml
   - type: entities
     state_color: true
     entities:
@@ -19,6 +18,11 @@ cards:
         label: strych
       - entity: binary_sensor.0x14b457fffe157ca1_contact
         name: klapa
+      - type: section
+        label: sypialnia
+      - entity: binary_sensor.0x00158d00025d6921_contact
+        name: okno
+        icon: "mdi:window-closed-variant"
       - type: section
         label: pokój Kamila
       - entity: binary_sensor.kamil_room_window

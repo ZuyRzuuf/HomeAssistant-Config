@@ -12,13 +12,22 @@ resources:
     # https://github.com/thomasloven/lovelace-layout-card
   - url: /hacsfiles/lovelace-layout-card/layout-card.js
     type: module
+    # https://github.com/thomasloven/lovelace-slider-entity-row
+  - url: /local/slider-entity-row.js
+    type: module
+    # https://github.com/thomasloven/lovelace-card-mod
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
     # https://github.com/marksie1988/atomic-calendar-revive
     # https://marksie1988.github.io/atomic-calendar-revive/quickstart.html
   - url: /hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js
     type: module
     # https://github.com/kalkih/mini-graph-card
-#  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-#    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+    # https://github.com/PiotrMachowski/Home-Assistant-Lovelace-HTML-Jinja2-Template-card
+  - url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
+    type: module
 dashboards:
   lovelace-admin:
     mode: yaml

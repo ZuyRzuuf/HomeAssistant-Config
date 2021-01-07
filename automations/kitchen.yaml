@@ -1,0 +1,9 @@
+- alias: Toggle Kitchen Cupboard Right Light
+  trigger:
+    platform: mqtt
+    topic: zigbee2mqtt/Kitchen Cupboard Right Light Switch/click
+    payload: single
+  action:
+    service: light.toggle
+    entity_id: light.shelly_shrgbw2_1dffe0
+  mode: single

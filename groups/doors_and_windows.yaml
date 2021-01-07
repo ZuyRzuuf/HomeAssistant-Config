@@ -3,3 +3,6 @@ entities:
   - binary_sensor.0xec1bbdfffe399fbd_contact
   - binary_sensor.0x14b457fffe157ca1_contact
   - binary_sensor.kamil_room_window
+  - binary_sensor.0x00158d00025d6921_contact
+  - binary_sensor.0x00158d0003a3530b_contact
+  - binary_sensor.0x00158d00025d69a8_contact

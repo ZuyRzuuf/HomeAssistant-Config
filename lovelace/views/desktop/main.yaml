@@ -1,0 +1,229 @@
+panel: true
+title: Główna
+path: main
+icon: "mdi:home"
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    column_num: 3
+    column_width: [400, auto, 400]
+    cards:
+      - !include ./sidebar.yaml
+      - type: weather-forecast
+        entity: weather.tuwima
+      - type: sensor
+        entity: sensor.solaredge_current_power
+        name: Produkcja prądu
+        graph: line
+        detail: 2
+      - type: "custom:atomic-calendar-revive"
+        showMonth: true
+        showWeekDay: true
+        showDate: true
+        language: pl
+        fullDayEventText: "cały dzień"
+        entities:
+          - entity: calendar.calendar_dom
+            icon: "mdi:home"
+            color: green
+      # - type: "custom:atomic-calendar-revive"
+      #   defaultMode: calendar
+      #   showMonth: true
+      #   showWeekDay: true
+      #   showDate: true
+      #   language: pl
+      #   fullDayEventText: "cały dzień"
+      #   entities:
+      #     - entity: calendar.calendar_dom
+      #       icon: "mdi:home"
+      #       color: green
+      - break
+      - type: custom:layout-card
+        layout: vertical
+        # column_num: 3
+        column_width: [33%, 33%, 33%]
+        cards:
+          - type: entities
+            title: "Gabinet"
+            entities:
+              - light.0x588e81fffe4d34ed_light
+              - sensor.temperature_office
+          - break
+          - type: entities
+            title: "Gabinet"
+            entities:
+              - light.0x588e81fffe4d34ed_light
+              - sensor.temperature_office
+          - break
+          - type: entities
+            title: "Gabinet"
+            entities:
+              - light.0x588e81fffe4d34ed_light
+              - sensor.temperature_office
+      - break
+      - type: glance
+        entities:
+          - entity: input_boolean.heating_season
+            name: sezon grzewczy
+            show_state: false
+            tap_action:
+              action: more-info
+          - entity: switch.tasmota_tasmota
+            name: piec gazowy
+            icon: "mdi:radiator"
+            show_state: false
+            tap_action:
+              action: more-info
+          - entity: switch.upper_bathroom_radiator_switch
+            name: górna łazienka
+            icon: "mdi:radiator"
+            show_state: false
+            tap_action:
+              action: more-info
+
+  # - type: custom:layout-card
+  #   layout: vertical
+  #   column_width: 100%
+  #   cards:
+  #     - type: custom:layout-card
+  #       layout: grid
+  #       gridcols: 400px auto
+  #       cards:
+  #         - type: custom:html-template-card
+  #           # always_update: true
+  #           content: |
+  #             {{ states('sensor.time') }}
+  #             {{ states('sensor.day_of_the_week') }}, {{ now().day }} {{ states('sensor.month') }} {{ now().year }}
+  #           gridcol: 1 / 2
+  #         - type: weather-forecast
+  #           entity: weather.tuwima
+  #           gridcol: 1 / 2
+  #         - type: custom:layout-card
+  #           layout: grid
+  #           gridcol: 2 / 3
+  #           gridcols: 400px 400px auto
+  #           gridrows: 250px 250px auto
+  #           cards:
+  #             - type: entities
+  #               title: "Gabinet"
+  #               entities:
+  #                 - light.0x588e81fffe4d34ed_light
+  #                 - sensor.temperature_office
+  #               gridcol: 1 / 2
+  #               gridrow: 1 / 2
+  # - type: custom:layout-card
+  #   layout: grid
+  #   gridcols: 400px 400px 400px auto
+  #   gridrows: auto 250px 250px auto
+  #   cards:
+  #     - type: custom:html-template-card
+  #       # always_update: true
+  #       content: |
+  #         {{ states('sensor.time') }}
+  #         {{ states('sensor.day_of_the_week') }}, {{ now().day }} {{ states('sensor.month') }} {{ now().year }}
+  #       gridcol: 1 / 2
+  #       gridrow: 1 / 2
+  #     - type: weather-forecast
+  #       entity: weather.tuwima
+  #       gridcol: 1 / 2
+  #       gridrow: 2 / 3
+  # - type: sensor
+  #   entity: sensor.solaredge_current_power
+  #   name: Produkcja prądu
+  #   graph: line
+  #   detail: 2
+  #   gridcol: 2 / 3
+  #   gridrow: 1 / 2
+  # - type: "custom:atomic-calendar-revive"
+  #   showMonth: true
+  #   showWeekDay: true
+  #   showDate: true
+  #   language: pl
+  #   fullDayEventText: "cały dzień"
+  #   entities:
+  #     - entity: calendar.calendar_dom
+  #       icon: "mdi:home"
+  #       color: green
+  #   gridcol: 4 / 5
+  #   gridrow: 1 / 3
+  # - type: "custom:atomic-calendar-revive"
+  #   defaultMode: calendar
+  #   showMonth: true
+  #   showWeekDay: true
+  #   showDate: true
+  #   language: pl
+  #   fullDayEventText: "cały dzień"
+  #   entities:
+  #     - entity: calendar.calendar_dom
+  #       icon: "mdi:home"
+  #       color: green
+  #   gridcol: 4 / 5
+  #   gridrow: 3 / 5
+  # - type: custom:layout-card
+  #   layout: horizontal
+  #   cards:
+  #     - type: gauge
+  #       entity: sensor.solaredge_energy_today
+  #       name: dzisiejsza produkcja prądu
+  #     - type: entities
+  #       entities:
+  #         - sensor.solaredge_energy_today
+  #     - type: entities
+  #       title: "Gabinet"
+  #       entities:
+  #         - light.0x588e81fffe4d34ed_light
+  #         - sensor.temperature_office
+  #     - type: entities
+  #       title: "Salon"
+  #       entities:
+  #         - light.0x842e14fffe57d107_light
+  #         - light.0x842e14fffe57d350_light
+  #         - sensor.0x000d6ffffe65b8da_temperature
+  #     - type: entities
+  #       title: "Salon"
+  #       entities:
+  #         - light.0x842e14fffe57d107_light
+  #         - light.0x842e14fffe57d350_light
+  #         - sensor.0x000d6ffffe65b8da_temperature
+
+  # - type: custom:layout-card
+  #   layout: vertical
+  #   column_width: 100%
+  #   cards:
+  #     - type: custom:layout-card
+  #       layout: horizontal
+  #       column_num: 2
+  #       cards:
+  #         - type: weather-forecast
+  #           entity: weather.tuwima
+  #         - type: sensor
+  #           entity: sensor.solaredge_current_power
+  #           name: Produkcja prądu
+  #           graph: line
+  #           detail: 2
+  #     - type: custom:layout-card
+  #       layout: horizontal
+  #       cards:
+  #         - type: gauge
+  #           entity: sensor.solaredge_energy_today
+  #           name: dzisiejsza produkcja prądu
+  #         - type: entities
+  #           entities:
+  #             - sensor.solaredge_energy_today
+  #         - type: entities
+  #           title: "Gabinet"
+  #           entities:
+  #             - light.0x588e81fffe4d34ed_light
+  #             - sensor.temperature_office
+  #         - type: entities
+  #           title: "Salon"
+  #           entities:
+  #             - light.0x842e14fffe57d107_light
+  #             # - light.0x842e14fffe57d350_light
+  #             - sensor.0x000d6ffffe65b8da_temperature
+  #         - type: entities
+  #           title: "Salon"
+  #           entities:
+  #             - light.0x842e14fffe57d107_light
+  #             - light.0x842e14fffe57d350_light
+  #             - sensor.0x000d6ffffe65b8da_temperature

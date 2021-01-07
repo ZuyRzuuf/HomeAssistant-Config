@@ -16,14 +16,14 @@
         {{ state_attr("climate.gabinet", "current_temperature") }}
       unit_of_measurement: "°C"
 
-# - platform: template
-#   sensors:
-#     temperature_gameroom:
-#       friendly_name: "Gameroom Temperature"
-#       device_class: temperature
-#       value_template: >-
-#         {{ state_attr("climate.int0000003", "current_temperature") }}
-#       unit_of_measurement: "°C"
+- platform: template
+  sensors:
+    temperature_gameroom:
+      friendly_name: "Gameroom Temperature"
+      device_class: temperature
+      value_template: >-
+        {{ state_attr("climate.int0000003", "current_temperature") }}
+      unit_of_measurement: "°C"
 
 - platform: template
   sensors:

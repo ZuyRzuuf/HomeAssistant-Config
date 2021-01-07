@@ -48,3 +48,7 @@ cards:
         name: zewnętrzny czujnik temperatury (zachód)
       - entity: sensor.0x000d6ffffe6ece5b_battery
         name: strych klapa
+      - entity: sensor.0x00158d000577d328_battery
+        name: kostka w salonie
+      - entity: sensor.0x00158d00025d6921_battery
+        name: czujnik otwarcia okna w sypialni

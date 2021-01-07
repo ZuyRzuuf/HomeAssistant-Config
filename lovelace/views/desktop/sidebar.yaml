@@ -1,0 +1,14 @@
+type:
+  custom:html-template-card
+  # always_update: true
+ignore_line_breaks: true
+content: |
+  {% set time_style = "color: darkgrey; font-size: 3em; font-weight: 400; margin-top: 5px; margin-bottom: 20px; text-align: right" %}
+  {% set date_style = "color: darkgrey; font-size: 2em; font-weight: 400; margin-top: 5px; margin-bottom: 8px; text-align: right" %}
+
+  <div style="{{ time_style }}">
+    {{ states('sensor.time') }}
+  </div>
+  <div style="{{ date_style }}">
+    {{ states('sensor.day_of_the_week') }}, {{ now().day }} {{ states('sensor.month') }} {{ now().year }}
+  </div>

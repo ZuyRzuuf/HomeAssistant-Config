@@ -1,0 +1,3 @@
+title: Tuwima
+views:
+  - !include lovelace/views/desktop/main.yaml

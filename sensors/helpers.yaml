@@ -6,5 +6,57 @@
     - "time"
     - "time_date"
 
+- platform: template
+  sensors:
+    day_of_the_week:
+      friendly_name: Day Of The Week
+      value_template: >-
+        {% if now().weekday() in (0,) %}
+          poniedziałek
+        {% elif now().weekday() in (1,) %}
+          wtorek
+        {% elif now().weekday() in (2,) %}
+          środa
+        {% elif now().weekday() in (3,) %}
+          czwartek
+        {% elif now().weekday() in (4,) %}
+          piątek
+        {% elif now().weekday() in (5,) %}
+          sobota
+        {% elif now().weekday() in (6,)%}
+          niedziela
+        {% endif %}
+
+- platform: template
+  sensors:
+    month:
+      friendly_name: Month
+      value_template: >-
+        {% if now().month in (1,) %}
+          styczeń
+        {% elif now().month in (2,) %}
+          luty
+        {% elif now().month in (3,) %}
+          marzec
+        {% elif now().month in (4,) %}
+          kwiecień
+        {% elif now().month in (5,) %}
+          maj
+        {% elif now().month in (6,) %}
+          czerwiec
+        {% elif now().month in (7,)%}
+          lipiec
+        {% elif now().month in (8,)%}
+          sierpień
+        {% elif now().month in (9,)%}
+          wrzesień
+        {% elif now().month in (10,)%}
+          październik
+        {% elif now().month in (11,)%}
+          listopad
+        {% elif now().month in (12,)%}
+          grudzień
+        {% endif %}
+
 - platform: season
   type: meteorological

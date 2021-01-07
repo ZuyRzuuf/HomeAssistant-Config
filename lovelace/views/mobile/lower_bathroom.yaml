@@ -1,6 +1,6 @@
-title: Garaż
-path: garage
-icon: "mdi:garage-variant"
+title: Dolna Łazienka
+path: lower-bathroom
+icon: mdi:shower-head
 badges: []
 cards:
   - type: vertical-stack
