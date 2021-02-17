@@ -1,0 +1,65 @@
+- id: '1613553460904'
+  name: Watching TV
+  entities:
+    remote.living_room_harmony_hub:
+      activity_starting:
+      current_activity: Watch TV
+      activity_list:
+      - Watch Netflix
+      - Watch Chromecast
+      - Watch TV
+      - Listen to Music
+      devices_list:
+      - Samsung TV
+      - Samsung Amp
+      - Advanced Digital Broadcast DVR
+      - Google Chromecast
+      last_activity: Watch TV
+      friendly_name: Living Room Harmony Hub
+      supported_features: 0
+      state: 'on'
+    switch.living_room_harmony_hub_watch_netflix:
+      friendly_name: Living Room Harmony Hub Watch Netflix
+      state: 'off'
+    switch.living_room_harmony_hub_watch_chromecast:
+      friendly_name: Living Room Harmony Hub Watch Chromecast
+      state: 'off'
+    switch.living_room_harmony_hub_watch_tv:
+      friendly_name: Living Room Harmony Hub Watch TV
+      state: 'on'
+    switch.living_room_harmony_hub_listen_to_music:
+      friendly_name: Living Room Harmony Hub Listen to Music
+      state: 'off'
+    light.0x842e14fffe57d350_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 190
+      linkquality: 208
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Left TV Light
+      supported_features: 45
+    light.0x842e14fffe57d107_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 190
+      linkquality: 208
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Right TV Light
+      supported_features: 45
+  icon: mdi:tv

@@ -1,4 +1,4 @@
 - platform: ping
   hosts:
     redmi_note_9_pro: 192.168.1.152
-    mi_10: 192.168.1.78
+    mi_10: 192.168.15.5

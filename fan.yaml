@@ -1,0 +1,5 @@
+- platform: xiaomi_miio_airpurifier
+  name: Mi Smart Antibacterial Humidifier
+  host: !secret bedroom_humidifier_ip
+  token: !secret bedroom_humidifier_token
+  model: deerma.humidifier.jsq

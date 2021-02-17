@@ -7,3 +7,64 @@ cards:
     cards:
       - type: horizontal-stack
         cards: !include ../../common_ui_elements/home_button.yaml
+      - type: custom:layout-card
+        layout: vertical
+        # column_num: 3
+        # column_width: [25%, 25%, 25%, 25%]
+        cards:
+          - type: entities
+            title: "szafki"
+            entities:
+              - light.shelly_shrgbw2_1dffe0
+          # - break
+          # - type: entities
+          #   title: "Gabinet"
+          #   entities:
+          #     - light.0x588e81fffe4d34ed_light
+          #     - sensor.temperature_office
+          # - break
+          # - type: entities
+          #   title: "Gabinet"
+          #   entities:
+          #     - light.0x588e81fffe4d34ed_light
+          #     - sensor.temperature_office
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            # name: "dish"
+            name: "[[[ return states['sensor.0x842e14fffe12670c_power'].state ]]]"
+            entity: switch.0x842e14fffe12670c_switch
+            # icon: "mdi:dishwasher"
+            icon: >
+              [[[
+                if (states['sensor.0x842e14fffe12670c_power'].state > 0) {
+                  return "mdi:dishwasher";
+                } 
+                else {
+                  return "mdi:dishwasher-off";
+                }
+              ]]]
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: " "
+            entity: sensor.0x842e14fffe12670c_power
+            icon: "mdi:dishwasher-off"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml

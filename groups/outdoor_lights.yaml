@@ -1,5 +1,9 @@
 name: Outdoor Lights
 entities:
-  - switch.0x60a423fffe94f80c_switch_left
-  - switch.0x60a423fffe9770a3_switch_left
-  - switch.0x842e14fffedfbfb3_switch_left
+  - switch.outdoor_front_lights
+  - switch.outdoor_side_lights
+  - switch.outdoor_back_lights
+  - switch.0x60a423fffe93e0d6_switch_left
+  - switch.0x60a423fffe93e0d6_switch_right
+  - switch.outdoor_back_door_leds
+  - light.0xbc33acfffe2aa1d9_light

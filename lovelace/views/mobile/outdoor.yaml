@@ -77,6 +77,36 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
+            name: kotłownia
+            entity: switch.outdoor_back_door_leds
+            icon: "mdi:string-lights"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: lampa
+            entity: light.0xbc33acfffe2aa1d9_light
+            icon: "mdi:coach-lamp"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
             name: gniazdko
             entity: switch.0x60a423fffe93e0d6_switch_left
             icon: "mdi:power-socket-eu"

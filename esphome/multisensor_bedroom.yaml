@@ -1,0 +1,76 @@
+esphome:
+  name: multisensor_bedroom
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Multisensor Bedroom"
+    password: "uWec3BjaXnuQ"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Enable Web server.
+web_server:
+  port: 80
+
+  # Sync time with Home Assistant.
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information.
+text_sensor:
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: "Multisensor Bedroom ESPHome Version"
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: "Multisensor Bedroom IP"
+    ssid:
+      name: "Multisensor Bedroom SSID"
+    bssid:
+      name: "Multisensor Bedroom BSSID"
+
+# Exposed switches.
+# Switch to restart the multisensor_attic.   
+switch:
+  - platform: restart
+    name: "Multisensor Bedroom Restart"
+
+i2c:
+
+sensor:
+  # Uptime sensor.
+  - platform: uptime
+    name: "Multisensor Bedroom Uptime"
+
+  # WiFi Signal sensor.
+  - platform: wifi_signal
+    name: "Multisensor Bedroom WiFi Signal"
+    update_interval: 60s
+
+  # Temperature & Humidity & Pressure BME280
+  - platform: bme280
+    temperature:
+      name: "Bedroom Temperature"
+      oversampling: 16x
+    pressure:
+      name: "Bedroom Pressure"
+    humidity:
+      name: "Bedroom Humidity"
+    address: 0x76
+    update_interval: 60s

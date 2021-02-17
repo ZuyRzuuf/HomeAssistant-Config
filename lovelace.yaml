@@ -28,6 +28,9 @@ resources:
     # https://github.com/PiotrMachowski/Home-Assistant-Lovelace-HTML-Jinja2-Template-card
   - url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
     type: module
+    # https://github.com/artem-sedykh/mini-humidifier
+  - url: /hacsfiles/mini-humidifier/mini-humidifier-bundle.js?v=2.3.2
+    type: js
 dashboards:
   lovelace-admin:
     mode: yaml

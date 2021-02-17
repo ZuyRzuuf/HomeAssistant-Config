@@ -1,2 +1,4 @@
 name: Bedroom status
 entities:
+  - switch.0x680ae2fffe096ec9_switch_l1
+  - fan.mi_smart_antibacterial_humidifier

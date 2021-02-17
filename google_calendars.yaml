@@ -362,3 +362,10 @@
     ignore_availability: true
     name: Serie A
     track: false
+
+- cal_id: cfpq9krov8h5uag3bv2ubssfpq0u4esc@import.calendar.google.com
+  entities:
+  - device_id: calendar
+    ignore_availability: true
+    name: Calendar
+    track: false

@@ -11,9 +11,18 @@ cards:
     cards:
       - type: horizontal-stack
         cards:
+          - type: sensor
+            name: temperatura
+            entity: sensor.bedroom_temperature
+          - type: sensor
+            name: wilgotność
+            entity: sensor.bedroom_humidity
+      - type: horizontal-stack
+        cards:
           - type: custom:button-card
             entity: binary_sensor.0x00158d00025d6921_contact
             name: " "
+            icon: mdi:window-closed-variant
             tap_action:
               action: more-info
             show_icon: true
@@ -22,6 +31,99 @@ cards:
             icon_height: 64px
             styles:
               card: !include ../../common_ui_elements/tile_style_mobile.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: LED
+            entity: switch.0x680ae2fffe096ec9_switch_l1
+            icon: "mdi:string-lights"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            name: listwa
+            entity: switch.0x60a423fffe10ffd9_l1
+            icon: "mdi:power-socket-eu"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: listwa
+            entity: switch.0x60a423fffe10ffd9_l2
+            icon: "mdi:power-socket-eu"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: listwa
+            entity: switch.0x60a423fffe10ffd9_l3
+            icon: "mdi:power-socket-eu"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: listwa
+            entity: switch.0x60a423fffe10ffd9_l4
+            icon: "mdi:power-socket-eu"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+          - type: custom:button-card
+            name: listwa
+            entity: switch.0x60a423fffe10ffd9_l5
+            icon: "mdi:power-socket-eu"
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            show_icon: true
+            show_name: true
+            show_state: false
+            icon_height: 64px
+            styles:
+              card: !include ../../common_ui_elements/tile_style_mobile.yaml
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-humidifier
+            entity: fan.mi_smart_antibacterial_humidifier
+            model: "deerma.humidifier.jsq"
       - type: horizontal-stack
         cards:
           - type: thermostat
