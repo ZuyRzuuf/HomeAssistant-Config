@@ -13,10 +13,10 @@ cards:
         cards:
           - type: sensor
             name: temperatura
-            entity: sensor.0x086bd7fffef07ec0_temperature
+            entity: sensor.0xec1bbdfffe45291a_temperature
           - type: sensor
             name: wilgotność
-            entity: sensor.0x086bd7fffef07ec0_humidity
+            entity: sensor.0xec1bbdfffe45291a_humidity
       - type: horizontal-stack
         cards:
           - type: custom:button-card

@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    outdoor_side_pir:
+      friendly_name: "Outdoor Side PIR"
+      value_template: '{{ is_state("sensor.rf_signal", "B95E16") }}'
+      

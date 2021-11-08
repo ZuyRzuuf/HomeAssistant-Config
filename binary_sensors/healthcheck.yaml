@@ -1,0 +1,83 @@
+- platform: template
+  sensors:
+    hc_rpi_usc_state:
+      friendly_name: RPi USC state
+      value_template: "{{is_state('device_tracker.hc_rpi_usc', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_rpi_usc', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    hc_rpi_plex_state:
+      friendly_name: RPi Plex state
+      value_template: "{{is_state('device_tracker.hc_rpi_plex', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_rpi_plex', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    hc_rpi_samba_book_state:
+      friendly_name: RPi Samba Book state
+      value_template: "{{is_state('device_tracker.hc_rpi_samba_book', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_rpi_samba_book', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    hc_rpi_grafana_state:
+      friendly_name: RPi Grafana state
+      value_template: "{{is_state('device_tracker.hc_rpi_grafana', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_rpi_grafana', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    hc_garage_door_switch_state:
+      friendly_name: Garage Door Switch state
+      value_template: "{{is_state('device_tracker.hc_garage_door_switch', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_garage_door_switch', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    hc_gas_stove_switch_state:
+      friendly_name: Gas Stove Switch state
+      value_template: "{{is_state('device_tracker.hc_gas_stove_switch', 'home')}}"
+      icon_template: >
+        {% if is_state('device_tracker.hc_gas_stove_switch', 'home') %}
+          mdi:check
+        {% else %}
+          mdi:cancel
+        {% endif %}
+
+- platform: template
+  sensors:
+    are_all_devices_responding:
+      friendly_name: Are all devices responding
+      value_template: "{{is_state('group.healthcheck', 'on')}}"
+      icon_template: >
+        {% if is_state('group.healthcheck', 'on') %}
+          mdi:hospital-box-outline
+        {% else %}
+          mdi:hospital
+        {% endif %}

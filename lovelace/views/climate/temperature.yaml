@@ -38,6 +38,11 @@ cards:
             show_state: false
             tap_action:
               action: toggle
+          - entity: input_boolean.use_floor_heating_only
+            name: tylko podłogowe
+            show_state: false
+            tap_action:
+              action: toggle
   - type: vertical-stack
     cards:
       - type: entities

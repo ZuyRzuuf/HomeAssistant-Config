@@ -63,3 +63,38 @@
       friendly_name: Living Room Right TV Light
       supported_features: 45
   icon: mdi:tv
+- id: '1613580999242'
+  name: TV Lights
+  entities:
+    light.0x842e14fffe57d350_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      linkquality: 231
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Left TV Light
+      supported_features: 45
+    light.0x842e14fffe57d107_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 254
+      linkquality: 231
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Right TV Light
+      supported_features: 45

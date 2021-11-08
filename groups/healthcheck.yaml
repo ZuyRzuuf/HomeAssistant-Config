@@ -1,0 +1,8 @@
+name: Devices healthcheck
+entities:
+  - binary_sensor.hc_rpi_usc_state
+  - binary_sensor.hc_rpi_plex_state
+  - binary_sensor.hc_rpi_samba_book_state
+  - binary_sensor.hc_rpi_grafana_state
+  - binary_sensor.hc_garage_door_switch_state
+  - binary_sensor.hc_gas_stove_switch_state

@@ -3,27 +3,70 @@ title: Główna
 path: main
 icon: "mdi:home"
 badges:
-  - entity: sensor.solaredge_energy_today
   - entity: person.krzysiek
+  - entity: binary_sensor.is_anetka_home
   - entity: sun.sun
-  - entity: binary_sensor.updater
 cards:
   - type: vertical-stack
     cards:
-      - type: horizontal-stack
+      - type: grid
+        columns: 4
+        square: false
         cards:
-          - type: weather-forecast
-            entity: weather.tuwima
-      - type: horizontal-stack
-        cards:
-          - type: sensor
-            entity: sensor.solaredge_current_power
-            name: Produkcja prądu
-            graph: line
-            detail: 2
-  - type: vertical-stack
-    cards:
-      - type: horizontal-stack
+          - type: custom:button-card
+            entity: binary_sensor.is_any_door_or_window_open
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/doors-and-windows
+            hold_action:
+              action: more-info
+            icon_height: 48px
+          - type: custom:button-card
+            entity: binary_sensor.is_any_window_at_risk_of_rain_open
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/doors-and-windows
+            hold_action:
+              action: more-info
+            icon_height: 48px
+          - type: custom:button-card
+            entity: binary_sensor.are_all_devices_responding
+            name: " "
+            color_type: card
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-admin/healthcheck
+            hold_action:
+              action: more-info
+            icon_height: 48px
+            state:
+              - value: "on"
+                color: "green"
+              - value: "off"
+                color: "red"
+                icon: mdi:alert
+                styles:
+                  card:
+                    - animation: blink 2s ease infinite
+          - type: custom:button-card
+            name: " "
+            show_icon: false
+            show_name: false
+            show_state: false
+      - type: grid
+        columns: 4
+        square: false
         cards:
           - type: custom:button-card
             entity: binary_sensor.is_kitchen_active
@@ -33,12 +76,10 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/kitchen
+              navigation_path: /lovelace/kitchen
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_livingroom_active
             name: " "
@@ -47,12 +88,10 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/living-room
+              navigation_path: /lovelace/living-room
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_office_active
             name: " "
@@ -61,29 +100,25 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/office
+              navigation_path: /lovelace/office
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
           - type: custom:button-card
-            entity: binary_sensor.is_boiler_house_active
+            entity: binary_sensor.is_lower_bathroom_active
             name: " "
             show_icon: true
             show_name: true
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/boiler-house
+              navigation_path: /lovelace/lower-bathroom
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
-  - type: vertical-stack
-    cards:
-      - type: horizontal-stack
+            icon_height: 48px
+      - type: grid
+        columns: 4
+        square: false
         cards:
           - type: custom:button-card
             entity: binary_sensor.is_gameroom_active
@@ -93,12 +128,41 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/gameroom
+              navigation_path: /lovelace/gameroom
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
+          - type: custom:button-card
+            name: " "
+            show_icon: false
+            show_name: false
+            show_state: false
+          - type: custom:button-card
+            name: " "
+            show_icon: false
+            show_name: false
+            show_state: false
+          - type: custom:button-card
+            name: " "
+            show_icon: false
+            show_name: false
+            show_state: false
+      - type: grid
+        columns: 4
+        square: false
+        cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_bedroom_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/bedroom
+            hold_action:
+              action: more-info
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_upper_bathroom_active
             name: " "
@@ -107,12 +171,23 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/upper-bathroom
+              navigation_path: /lovelace/upper-bathroom
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
+          - type: custom:button-card
+            entity: binary_sensor.is_kamil_room_active
+            name: " "
+            icon: mdi:face
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kamil-room
+            hold_action:
+              action: more-info
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_visitors_room_active
             name: " "
@@ -121,14 +196,38 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/visitors-room
+              navigation_path: /lovelace/visitors-room
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
-      - type: horizontal-stack
+            icon_height: 48px
+      - type: grid
+        columns: 4
+        square: false
         cards:
+          - type: custom:button-card
+            entity: binary_sensor.is_boiler_house_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/boiler-house
+            hold_action:
+              action: more-info
+            icon_height: 48px
+          - type: custom:button-card
+            entity: binary_sensor.is_garage_active
+            name: " "
+            show_icon: true
+            show_name: true
+            show_state: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/garage
+            hold_action:
+              action: more-info
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_attic_active
             name: " "
@@ -137,12 +236,10 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/attic
+              navigation_path: /lovelace/attic
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px
           - type: custom:button-card
             entity: binary_sensor.is_outdoor_active
             name: " "
@@ -151,33 +248,7 @@ cards:
             show_state: false
             tap_action:
               action: navigate
-              navigation_path: /lovelace-admin/outdoor
+              navigation_path: /lovelace/outdoor
             hold_action:
               action: more-info
-            icon_height: 64px
-            styles:
-              card: !include ../../common_ui_elements/tile_style.yaml
-  - type: vertical-stack
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                entity: script.dry_towel_in_upper_bathroom
-                name: "dry towel"
-                show_icon: true
-                show_name: true
-                show_state: false
-                icon_height: 64px
-                styles:
-                  card: !include ../../common_ui_elements/tile_style.yaml
-              - type: custom:button-card
-                entity: script.dry_upper_bathroom_after_bath
-                name: "dry bathroom"
-                show_icon: true
-                show_name: true
-                show_state: false
-                icon_height: 64px
-                styles:
-                  card: !include ../../common_ui_elements/tile_style.yaml
+            icon_height: 48px

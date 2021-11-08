@@ -17,6 +17,17 @@ cards:
             name: Produkcja prądu
             graph: line
             detail: 2
+      - type: horizontal-stack
+        cards:
+          - type: history-graph
+            title: Łącze
+            entities:
+              - entity: sensor.speedtest_download
+                name: download
+              - entity: sensor.speedtest_upload
+                name: download
+              - entity: sensor.speedtest_ping
+                name: download
   - type: vertical-stack
     cards:
       - type: grid

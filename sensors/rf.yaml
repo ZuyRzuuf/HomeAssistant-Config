@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "RF_Bridge/tele/RESULT"
+  name: "RF Signal"
+  value_template: "{{value_json.RfReceived.Data}}"
+  expire_after: 1

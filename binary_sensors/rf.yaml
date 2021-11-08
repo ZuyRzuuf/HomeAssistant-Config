@@ -1,8 +1,8 @@
-- platform: mqtt
-  state_topic: "RF_Bridge/tele/RESULT"
-  # command_topic: "RF_Bridge/cmnd"
-  name: "RF Signal"
-  value_template: "{{value_json.RfReceived.Data}}"
-  payload_on: "AAA055"
-  payload_off: "AAA055"
-  off_delay: 5
+# - platform: mqtt
+#   state_topic: "RF_Bridge/tele/RESULT"
+#   # command_topic: "RF_Bridge/cmnd"
+#   name: "RF Signal"
+#   value_template: "{{value_json.RfReceived.Data}}"
+#   # payload_on: "AAA055"
+#   # payload_off: "AAA055"
+#   off_delay: 5

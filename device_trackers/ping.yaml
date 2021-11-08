@@ -1,4 +1,10 @@
 - platform: ping
   hosts:
-    redmi_note_9_pro: 192.168.1.152
+    redmi_note_9_pro: 192.168.15.15
     mi_10: 192.168.15.5
+    hc_rpi_usc: 192.168.15.33
+    hc_rpi_plex: 192.168.15.37
+    hc_rpi_samba_book: 192.168.15.40
+    hc_rpi_grafana: 192.168.15.18
+    hc_gas_stove_switch: 192.168.15.26
+    hc_garage_door_switch: 192.168.15.24

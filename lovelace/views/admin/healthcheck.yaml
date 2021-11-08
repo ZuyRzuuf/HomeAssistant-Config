@@ -1,0 +1,25 @@
+title: Healtcheck
+path: healthcheck
+icon: "mdi:door"
+badges: []
+cards:
+  - type: entities
+    title: Healtcheck
+    state_color: true
+    entities:
+      - type: section
+        label: serwery
+      - entity: binary_sensor.hc_rpi_usc_state
+        name: RPi Unifi Software Controller
+      - entity: binary_sensor.hc_rpi_plex_state
+        name: RPi Plex
+      - entity: binary_sensor.hc_rpi_samba_book_state
+        name: RPi Samba Book
+      - entity: binary_sensor.hc_rpi_grafana_state
+        name: RPi Grafana
+      - type: section
+        label: urządzenia
+      - entity: binary_sensor.hc_gas_stove_switch_state
+        name: piec
+      - entity: binary_sensor.hc_garage_door_switch_state
+        name: drzwi garazowe

@@ -1,6 +1,7 @@
 title: Admin Panel
 views:
   - !include lovelace/views/admin/main.yaml
+  - !include lovelace/views/admin/healthcheck.yaml
   - !include lovelace/views/admin/kitchen.yaml
   - !include lovelace/views/admin/living_room.yaml
   - !include lovelace/views/admin/office.yaml
