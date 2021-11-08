@@ -22,8 +22,8 @@ influxdb: !include influxdb.yaml
 shelly: !include shelly.yaml
 
 google:
-  client_id: 741187672903-rsp09sfthiin9jl1abnjsa317p5sktjq.apps.googleusercontent.com
-  client_secret: rUkExEeiN7BCpDhxuMBkTXCD
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
   track_new_calendar: false
 
 apcupsd: !include apcupsd.yaml
